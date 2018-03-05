@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Quiz App</string>
+    <string name="quiz_header_text">Are you\n Moonstruck?</string>
+    <string name="question01_text">Question #1: </string>
+    <string name="question02_text">Question #2:</string>
+    <string name="question03_text">Question #3:</string>
+    <string name="question04_text">Question #4:</string>
+    <string name="question05_text">Question #5:</string>
+    <string name="question06_text">Question #6:</string>
+    <string name="question07_text">Question #7:</string>
+    <string name="question08_text">Question #8:</string>
+    <string name="question09_text">Question #9:</string>
+    <string name="question10_text">Question #10:</string>
+
+</resources>
