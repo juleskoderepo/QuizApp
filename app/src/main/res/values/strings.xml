@@ -1,9 +1,10 @@
 <resources>
     <string name="app_name">Quiz App</string>
     <string name="quiz_header_text">Are you\n Moonstruck?</string>
+    <string name="reset_button_text">reset</string>
     <string name="question01_label">Question #1:</string>
     <string name="question01_text">In the opening scene, what is the name of the funeral home Loretta enters?</string>
-    <string name="question01_answer">Nucciarone</string>
+    <string name="question01_answer">NUCCIARONE</string>
     <string name="question02_label">Question #2:</string>
     <string name="question02_text">In which restaurant do Loretta and Johnny get engaged?</string>
     <string name="question02_answer">Gran Ticino</string>
@@ -44,7 +45,7 @@
     <string name="question08_guess2">Snow White</string>
     <string name="question08_guess3">Tinkerbell</string>
     <string name="question09_label">Question #9:</string>
-    <string name="question09_text">According to Loretta mother, Rose, why do men chase women?</string>
+    <string name="question09_text">According to Loretta\'s mother, Rose, why do men chase women?</string>
     <string name="question09_answer">They fear death</string>
     <string name="question09_guess1">Nerves</string>
     <string name="question09_guess2">Women are charming</string>

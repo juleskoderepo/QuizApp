@@ -12,12 +12,26 @@
         android:layout_height="0dp"
         android:layout_weight="1">
 
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/reset_button_text"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:background="@color/resetButtonColor"
+            android:layout_marginRight="@dimen/layout_margin_top_bottom"
+            android:layout_marginBottom="@dimen/layout_margin_top_bottom"
+            android:onClick="resetQuiz"
+            android:minHeight="24dp"
+            android:minWidth="64dp"/>
+
         <ImageView
             android:id="@+id/header_moon_image"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:scaleType="fitXY"
-            android:src="@drawable/moonstruck640x360" />
+            android:src="@drawable/moonstruck640x360"
+            android:focusableInTouchMode="true"/>
 
         <TextView
             android:layout_width="match_parent"
@@ -29,6 +43,7 @@
             android:textColor="@android:color/white"
             android:textSize="36sp"
             android:textStyle="italic" />
+
 
     </RelativeLayout>
 
@@ -73,7 +88,9 @@
                 android:layout_marginRight="@dimen/layout_margin_left_right"
                 android:background="@drawable/rectangle"
                 android:hint="@string/edittext_hint"
-                android:paddingLeft="8dp" />
+                android:paddingLeft="8dp"
+                android:inputType="textCapCharacters"
+                android:imeOptions="actionDone"/>
 
             <View
                 android:layout_width="match_parent"
@@ -107,6 +124,7 @@
             </LinearLayout>
 
             <RadioGroup
+                android:id="@+id/q2_radioGroup"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="@dimen/layout_margin_top_bottom"
@@ -239,6 +257,7 @@
             </LinearLayout>
 
             <RadioGroup
+                android:id="@+id/q4_radioGroup"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="@dimen/layout_margin_top_bottom"
@@ -315,7 +334,10 @@
                 android:layout_marginRight="@dimen/layout_margin_left_right"
                 android:background="@drawable/rectangle"
                 android:hint="@string/q5_textbox1_hint"
-                android:paddingLeft="8dp" />
+                android:paddingLeft="8dp"
+                android:inputType="textCapCharacters"
+                android:imeOptions="actionDone"
+                />
 
             <EditText
                 android:id="@+id/q5_textbox2"
@@ -326,7 +348,10 @@
                 android:layout_marginRight="@dimen/layout_margin_left_right"
                 android:background="@drawable/rectangle"
                 android:hint="@string/q5_textbox2_hint"
-                android:paddingLeft="8dp" />
+                android:paddingLeft="8dp"
+                android:inputType="textCapCharacters"
+                android:imeOptions="actionDone"
+                />
 
 
             <View
@@ -361,6 +386,7 @@
             </LinearLayout>
 
             <RadioGroup
+                android:id="@+id/q6_radioGroup"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="@dimen/layout_margin_top_bottom"
@@ -438,7 +464,8 @@
                 android:layout_marginRight="16dp"
                 android:background="@drawable/rectangle"
                 android:hint="@string/edittext_hint"
-                android:paddingLeft="8dp" />
+                android:paddingLeft="8dp"
+                android:imeOptions="actionDone"/>
 
             <View
                 android:layout_width="match_parent"
@@ -472,6 +499,7 @@
             </LinearLayout>
 
             <RadioGroup
+                android:id="@+id/q8_radioGroup"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="@dimen/layout_margin_top_bottom"
@@ -541,6 +569,7 @@
             </LinearLayout>
 
             <RadioGroup
+                android:id="@+id/q9_radioGroup"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="@dimen/layout_margin_top_bottom"
@@ -610,6 +639,7 @@
             </LinearLayout>
 
             <RadioGroup
+                android:id="@+id/q10_radioGroup"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="@dimen/layout_margin_top_bottom"
@@ -743,6 +773,7 @@
             </LinearLayout>
 
             <RadioGroup
+                android:id="@+id/q12_radioGroup"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="@dimen/layout_margin_top_bottom"
@@ -750,24 +781,28 @@
                 android:layout_marginRight="@dimen/layout_margin_left_right">
 
                 <RadioButton
+                    android:id="@+id/q12_radio1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:paddingLeft="@dimen/padding_checkbox_radio"
                     android:text="@string/question12_guess1" />
 
                 <RadioButton
+                    android:id="@+id/q12_radio2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:paddingLeft="@dimen/padding_checkbox_radio"
                     android:text="@string/question12_guess2" />
 
                 <RadioButton
+                    android:id="@+id/q12_radio3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:paddingLeft="@dimen/padding_checkbox_radio"
                     android:text="@string/question12_guess3" />
 
                 <RadioButton
+                    android:id="@+id/q12_radio4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:paddingLeft="@dimen/padding_checkbox_radio"
