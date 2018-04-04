@@ -1,15 +1,24 @@
 package com.example.android.quizapp;
 
+import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.TextView;
+
+import org.w3c.dom.Text;
 
 public class MainActivity extends AppCompatActivity {
     int quiz_score = 0;
-    int max_score = 18;
+    int max_score = 12;
+    float q3_sub_score = 0;
+    float q5_sub_score = 0;
+    float q11_sub_score = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -73,31 +82,65 @@ public class MainActivity extends AppCompatActivity {
 
     //Highlight selected answer(s)
 
+    private static final String TAG = "QuizAnswers";
 
     //Validate guesses
-    public int checkAnswers (View view){
+    public void checkAnswers (View view){
+        //re-initialize quiz score and sub-scores
+        resetQuizScores();
+
         //check answer to Question 1
         EditText guess_Q1 = (EditText) findViewById(R.id.q1_textbox);
-        String guess_Q1_trimeed = guess_Q1.getText().toString().trim();
-
-        if (guess_Q1_trimeed == getString(R.string.question01_answer)) {
+        String q1_string = guess_Q1.getText().toString().toLowerCase();
+        if ( q1_string.equals(getString(R.string.question01_answer))) {
             quiz_score += 1;
         };
 
         //check answer to Question 2
+        RadioButton q2_correct_answer = (RadioButton) (findViewById(R.id.q2_radio_answer));
 
+        if (q2_correct_answer.isChecked() == true){
+            quiz_score += 1;
+        }
 
         //check answer to Question 3
+        CheckBox q3_cb1 = (CheckBox) (findViewById(R.id.q3_check_guess1));
+        CheckBox q3_cb2 = (CheckBox) (findViewById(R.id.q3_check_guess2));
+        CheckBox q3_cb3 = (CheckBox) (findViewById(R.id.q3_check_guess3));
+        CheckBox q3_cb4 = (CheckBox) (findViewById(R.id.q3_check_guess4));
 
+        if (q3_cb1.isChecked() == true){
+            q3_sub_score += .25;
+        }
+
+        if (q3_cb2.isChecked() == true){
+            q3_sub_score += .25;
+        }
+
+        if (q3_cb3.isChecked() == true){
+            q3_sub_score += .25;
+        }
+
+        if (q3_cb4.isChecked() == true){
+            q3_sub_score += .25;
+        }
+
+        if (q3_sub_score == 1.0){
+            quiz_score += 1;
+        }
 
         //check answer to Question 4
+        RadioButton q4_correct_answer = (RadioButton) (findViewById(R.id.q4_radio3));
 
+        if( q4_correct_answer.isChecked() == true) {
+            quiz_score += 1;
+        }
 
         //check answers to Question 5
         //check gate answer
-        int q5_sub_score = 0;
         EditText q5_Gate = (EditText) findViewById(R.id.q5_textbox1);
-        if (q5_Gate.getText().toString() == getString(R.string.question05_answer_gate)){
+        String q5_gate_guess = q5_Gate.getText().toString();
+        if (q5_gate_guess.equals(getString(R.string.question05_answer_gate))) {
             q5_sub_score += .5;
 
             //set status color
@@ -105,57 +148,119 @@ public class MainActivity extends AppCompatActivity {
 
         //check flight answer
         EditText q5_Flight = (EditText) findViewById(R.id.q5_textbox2);
-        if (q5_Flight.getText().toString() == getString(R.string.question05_answer_flight)){
+        String q5_flight_guess = q5_Flight.getText().toString();
+        if (q5_flight_guess.equals(getString(R.string.question05_answer_flight))){
             q5_sub_score += .5;
 
             //set status color
         }
 
-        if (q5_sub_score == 1){
+        if (q5_sub_score == 1.0){
             quiz_score += 1;
         }
 
         //check answer to Question 6
+        RadioButton q6_correct_answer = (RadioButton) (findViewById(R.id.q6_radio1));
+
+        if (q6_correct_answer.isChecked() == true){
+            quiz_score += 1;
+        }
 
 
         //check answer to Question 7
         EditText guess_Q7 = (EditText) findViewById(R.id.q7_textbox);
-        if (guess_Q7.getText().toString() == getString(R.string.question07_answer)){
+        String q7_string = guess_Q7.getText().toString();
+        if (q7_string.equals(getString(R.string.question07_answer))){
             quiz_score += 1;
 
             //set status color
         }
 
-
         //check answer to Question 8
+        RadioButton q8_correct_answer = (RadioButton) (findViewById(R.id.q8_radio1));
 
+        if (q8_correct_answer.isChecked() == true){
+            quiz_score += 1;
+        }
 
         //check answer to Question 9
+        RadioButton q9_correct_answer = (RadioButton) (findViewById(R.id.q9_radio4));
 
+        if (q9_correct_answer.isChecked() == true) {
+            quiz_score += 1;
+        }
 
         //check answer to Question 10
+        RadioButton q10_correct_answer = (RadioButton) (findViewById(R.id.q10_radio1));
 
+        if (q10_correct_answer.isChecked() == true) {
+            quiz_score += 1;
+        }
 
         //check answer to Question 11
+        CheckBox q11_cb1 = (CheckBox)(findViewById(R.id.q11_check_guess1));
+        CheckBox q11_cb2 = (CheckBox)(findViewById(R.id.q11_check_guess2));
+        CheckBox q11_cb3 = (CheckBox)(findViewById(R.id.q11_check_guess3));
+        CheckBox q11_cb4 = (CheckBox)(findViewById(R.id.q11_check_guess4));
 
+        if (q11_cb1.isChecked() == true){
+            q11_sub_score += -1;
+        }
+
+        if (q11_cb2.isChecked() == true){
+            q11_sub_score += .333;
+        }
+
+        if (q11_cb3.isChecked() == true){
+            q11_sub_score += .333;
+        }
+
+        if (q11_cb4.isChecked() == true){
+            q11_sub_score += .334;
+        }
+
+        if (q11_sub_score == 1.0){
+            quiz_score += 1;
+        }
 
         //check answer to Question 12
+        RadioButton q12_correct_answer = (RadioButton) (findViewById(R.id.q12_radio4));
 
-        return quiz_score;
+        if(q12_correct_answer.isChecked() == true){
+            quiz_score += 1;
+        }
+
+        displayScore(quiz_score);
+
+        return;
     }
 
 
-    // Calculate score
-
-
     //Display quiz result message
+    public void displayScore (int quizScoreTotal){
+        String quiz_result_msg = "You got " + quizScoreTotal + " out of " + max_score + ".";
+        TextView quizResult = (TextView) (findViewById(R.id.quiz_result_textview));
 
+        //if result message is already displayed, hide previous score.
+        hideScore();
 
-    //reset quiz
+        quizResult.setText(quiz_result_msg);
+        quizResult.setVisibility(View.VISIBLE);
+        quizResult.requestFocus();
+
+    }
+
+    public void hideScore (){
+        TextView quizResult = (TextView) (findViewById(R.id.quiz_result_textview));
+
+        if (quizResult.getVisibility() == View.VISIBLE){
+            quizResult.setVisibility(View.GONE);
+        }
+
+    }
+
+    //reset quiz answers
     public void resetQuiz(View view){
-        //reset quiz score
-        quiz_score = 0;
-
         //Clear Question 1
         EditText guess_Q1 = (EditText) findViewById(R.id.q1_textbox);
         guess_Q1.setText("");
@@ -243,9 +348,24 @@ public class MainActivity extends AppCompatActivity {
         RadioGroup q12_Answers = (RadioGroup) (findViewById(R.id.q12_radioGroup));
         q12_Answers.clearCheck();
 
-        guess_Q1.requestFocus();
+        //Hide score
+        hideScore();
 
-        return;
+        resetQuizScores();
+
+
     }
+
+    //reset quiz scores
+    public void resetQuizScores (){
+        //clear quiz score
+        quiz_score = 0;
+
+        //clear sub scores
+        q3_sub_score = 0;
+        q5_sub_score = 0;
+        q11_sub_score = 0;
+    }
+
 
 }

@@ -2,9 +2,10 @@
     <string name="app_name">Quiz App</string>
     <string name="quiz_header_text">Are you\n Moonstruck?</string>
     <string name="reset_button_text">reset</string>
+    <string name="edittext_hint">Type answer here</string>
     <string name="question01_label">Question #1:</string>
     <string name="question01_text">In the opening scene, what is the name of the funeral home Loretta enters?</string>
-    <string name="question01_answer">NUCCIARONE</string>
+    <string name="question01_answer">nucciarone</string>
     <string name="question02_label">Question #2:</string>
     <string name="question02_text">In which restaurant do Loretta and Johnny get engaged?</string>
     <string name="question02_answer">Gran Ticino</string>
@@ -37,6 +38,7 @@
     <string name="question06_guess3">6</string>
     <string name="question07_label">Question #7:</string>
     <string name="question07_text">How much does Mr. Castorini quote the couple to fix the plumbing?</string>
+    <string name="question07_hint">Enter a number. No decimal.</string>
     <string name="question07_answer">10800</string>
     <string name="question08_label">Question #8:</string>
     <string name="question08_text">What is the name of the beauty shop Loretta goes to before the opera?</string>
@@ -68,6 +70,6 @@
     <string name="question12_guess1">He met someone in Italy.</string>
     <string name="question12_guess2">Loretta slept with Ronny.</string>
     <string name="question12_guess3">His mother told him to.</string>
-    <string name="edittext_hint">Type answer here</string>
+    <string name="submit_button_text">Submit</string>
 
 </resources>

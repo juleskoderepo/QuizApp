@@ -2,5 +2,8 @@
 <resources>
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
-    <color name="colorAccent">#FF4081</color>
+    <color name="colorAccent">#388E3C</color>
+    <color name="resetButtonColor">#FFFF8D</color>
+    <color name="submitButtonColor">#1A237E</color>
+    <color name="highScoreColor">#00E676</color>
 </resources>
