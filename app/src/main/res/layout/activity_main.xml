@@ -55,7 +55,10 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:clickable="true"
+            android:focusable="true"
+            android:focusableInTouchMode="true">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -69,7 +72,8 @@
                     android:layout_marginBottom="@dimen/layout_margin_top_bottom"
                     android:layout_marginLeft="@dimen/layout_margin_left_right"
                     android:layout_marginTop="@dimen/layout_margin_top_bottom"
-                    android:text="@string/question01_label" />
+                    android:text="@string/question01_label"
+                    android:textSize="@dimen/default_text_size"/>
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -77,7 +81,9 @@
                     android:layout_marginBottom="@dimen/layout_margin_top_bottom"
                     android:layout_marginLeft="@dimen/layout_margin_left_right"
                     android:layout_marginTop="@dimen/layout_margin_top_bottom"
-                    android:text="@string/question01_text" />
+                    android:text="@string/question01_text"
+                    android:textSize="@dimen/default_text_size" />
+
             </LinearLayout>
 
             <EditText
@@ -89,8 +95,23 @@
                 android:layout_marginRight="@dimen/layout_margin_left_right"
                 android:background="@drawable/rectangle"
                 android:hint="@string/edittext_hint"
+                android:inputType="textCapSentences"
                 android:imeOptions="actionDone"
                 android:paddingLeft="8dp" />
+
+            <TextView
+                android:id="@+id/q1_result_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/layout_margin_top_bottom"
+                android:layout_marginTop="@dimen/layout_margin_top_bottom"
+                android:layout_gravity="center_horizontal"
+                android:gravity="center_horizontal"
+                android:paddingLeft="@dimen/padding_textbox_left_right"
+                android:paddingRight="@dimen/padding_textbox_left_right"
+                android:textSize="@dimen/result_text_size"
+                android:textStyle="bold|italic"
+                android:visibility="gone" />
 
             <View
                 android:layout_width="match_parent"
@@ -99,7 +120,7 @@
                 android:layout_marginLeft="@dimen/layout_margin_left_right"
                 android:layout_marginRight="@dimen/layout_margin_left_right"
                 android:layout_marginTop="@dimen/layout_margin_top_bottom"
-                android:background="@android:color/darker_gray"></View>
+                android:background="@android:color/darker_gray" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -113,7 +134,8 @@
                     android:layout_marginBottom="@dimen/layout_margin_top_bottom"
                     android:layout_marginLeft="@dimen/layout_margin_left_right"
                     android:layout_marginTop="@dimen/layout_margin_top_bottom"
-                    android:text="@string/question02_label" />
+                    android:text="@string/question02_label"
+                    android:textSize="@dimen/default_text_size" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -121,7 +143,9 @@
                     android:layout_marginBottom="@dimen/layout_margin_top_bottom"
                     android:layout_marginLeft="@dimen/layout_margin_left_right"
                     android:layout_marginTop="@dimen/layout_margin_top_bottom"
-                    android:text="@string/question02_text" />
+                    android:text="@string/question02_text"
+                    android:textSize="@dimen/default_text_size" />
+
             </LinearLayout>
 
             <RadioGroup
@@ -138,6 +162,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:paddingLeft="@dimen/padding_checkbox_radio"
+                    android:paddingRight="@dimen/padding_checkbox_radio"
                     android:text="@string/question02_guess1" />
 
                 <RadioButton
@@ -145,6 +170,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:paddingLeft="@dimen/padding_checkbox_radio"
+                    android:paddingRight="@dimen/padding_checkbox_radio"
                     android:text="@string/question02_guess2" />
 
                 <RadioButton
@@ -152,6 +178,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:paddingLeft="@dimen/padding_checkbox_radio"
+                    android:paddingRight="@dimen/padding_checkbox_radio"
                     android:text="@string/question02_answer" />
 
                 <RadioButton
@@ -159,9 +186,23 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:paddingLeft="@dimen/padding_checkbox_radio"
+                    android:paddingRight="@dimen/padding_checkbox_radio"
                     android:text="@string/question02_guess3" />
 
             </RadioGroup>
+
+            <TextView
+                android:id="@+id/q2_result_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/layout_margin_top_bottom"
+                android:layout_marginTop="@dimen/layout_margin_top_bottom"
+                android:layout_gravity="center_horizontal"
+                android:paddingLeft="@dimen/padding_textbox_left_right"
+                android:paddingRight="@dimen/padding_textbox_left_right"
+                android:textSize="@dimen/result_text_size"
+                android:textStyle="bold|italic"
+                android:visibility="gone" />
 
             <View
                 android:layout_width="match_parent"
@@ -170,7 +211,7 @@
                 android:layout_marginLeft="@dimen/layout_margin_left_right"
                 android:layout_marginRight="@dimen/layout_margin_left_right"
                 android:layout_marginTop="@dimen/layout_margin_top_bottom"
-                android:background="@android:color/darker_gray"></View>
+                android:background="@android:color/darker_gray"/>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -184,7 +225,8 @@
                     android:layout_marginBottom="@dimen/layout_margin_top_bottom"
                     android:layout_marginLeft="@dimen/layout_margin_left_right"
                     android:layout_marginTop="@dimen/layout_margin_top_bottom"
-                    android:text="@string/question03_label" />
+                    android:text="@string/question03_label"
+                    android:textSize="@dimen/default_text_size" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -192,7 +234,9 @@
                     android:layout_marginBottom="@dimen/layout_margin_top_bottom"
                     android:layout_marginLeft="@dimen/layout_margin_left_right"
                     android:layout_marginTop="@dimen/layout_margin_top_bottom"
-                    android:text="@string/question03_text" />
+                    android:text="@string/question03_text"
+                    android:textSize="@dimen/default_text_size" />
+
             </LinearLayout>
 
             <CheckBox
@@ -201,6 +245,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="@dimen/answer_left_indent"
                 android:layout_marginRight="@dimen/layout_margin_left_right"
+                android:paddingLeft="@dimen/padding_checkbox_radio"
+                android:paddingRight="@dimen/padding_checkbox_radio"
                 android:text="@string/question03_guess1" />
 
             <CheckBox
@@ -209,6 +255,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="@dimen/answer_left_indent"
                 android:layout_marginRight="@dimen/layout_margin_left_right"
+                android:paddingLeft="@dimen/padding_checkbox_radio"
+                android:paddingRight="@dimen/padding_checkbox_radio"
                 android:text="@string/question03_guess2" />
 
             <CheckBox
@@ -217,6 +265,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="@dimen/answer_left_indent"
                 android:layout_marginRight="@dimen/layout_margin_left_right"
+                android:paddingLeft="@dimen/padding_checkbox_radio"
+                android:paddingRight="@dimen/padding_checkbox_radio"
                 android:text="@string/question03_guess3" />
 
             <CheckBox
@@ -225,7 +275,22 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="@dimen/answer_left_indent"
                 android:layout_marginRight="@dimen/layout_margin_left_right"
+                android:paddingLeft="@dimen/padding_checkbox_radio"
+                android:paddingRight="@dimen/padding_checkbox_radio"
                 android:text="@string/question03_guess4" />
+
+            <TextView
+                android:id="@+id/q3_result_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/layout_margin_top_bottom"
+                android:layout_marginTop="@dimen/layout_margin_top_bottom"
+                android:layout_gravity="center_horizontal"
+                android:paddingLeft="@dimen/padding_textbox_left_right"
+                android:paddingRight="@dimen/padding_textbox_left_right"
+                android:textSize="@dimen/result_text_size"
+                android:textStyle="bold|italic"
+                android:visibility="gone" />
 
             <View
                 android:layout_width="match_parent"
@@ -234,7 +299,7 @@
                 android:layout_marginLeft="@dimen/layout_margin_left_right"
                 android:layout_marginRight="@dimen/layout_margin_left_right"
                 android:layout_marginTop="@dimen/layout_margin_top_bottom"
-                android:background="@android:color/darker_gray"></View>
+                android:background="@android:color/darker_gray" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -248,7 +313,8 @@
                     android:layout_marginBottom="@dimen/layout_margin_top_bottom"
                     android:layout_marginLeft="@dimen/layout_margin_left_right"
                     android:layout_marginTop="@dimen/layout_margin_top_bottom"
-                    android:text="@string/question04_label" />
+                    android:text="@string/question04_label"
+                    android:textSize="@dimen/default_text_size"/>
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -256,7 +322,9 @@
                     android:layout_marginBottom="@dimen/layout_margin_top_bottom"
                     android:layout_marginLeft="@dimen/layout_margin_left_right"
                     android:layout_marginTop="@dimen/layout_margin_top_bottom"
-                    android:text="@string/question04_text" />
+                    android:text="@string/question04_text"
+                    android:textSize="@dimen/default_text_size" />
+
             </LinearLayout>
 
             <RadioGroup
@@ -271,7 +339,8 @@
                     android:id="@+id/q4_radio1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:paddingLeft="@dimen/padding_checkbox_radio"
+                    android:paddingLeft="@dimen/padding_textbox_left_right"
+                    android:paddingRight="@dimen/padding_textbox_left_right"
                     android:text="@string/question04_guess1" />
 
                 <RadioButton
@@ -279,6 +348,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:paddingLeft="@dimen/padding_checkbox_radio"
+                    android:paddingRight="@dimen/padding_textbox_left_right"
                     android:text="@string/question04_guess2" />
 
                 <RadioButton
@@ -286,6 +356,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:paddingLeft="@dimen/padding_checkbox_radio"
+                    android:paddingRight="@dimen/padding_textbox_left_right"
                     android:text="@string/question04_answer" />
 
                 <RadioButton
@@ -293,9 +364,23 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:paddingLeft="@dimen/padding_checkbox_radio"
+                    android:paddingRight="@dimen/padding_textbox_left_right"
                     android:text="@string/question04_guess3" />
 
             </RadioGroup>
+
+            <TextView
+                android:id="@+id/q4_result_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/layout_margin_top_bottom"
+                android:layout_marginTop="@dimen/layout_margin_top_bottom"
+                android:layout_gravity="center_horizontal"
+                android:paddingLeft="@dimen/padding_textbox_left_right"
+                android:paddingRight="@dimen/padding_textbox_left_right"
+                android:textSize="@dimen/result_text_size"
+                android:textStyle="bold|italic"
+                android:visibility="gone" />
 
             <View
                 android:layout_width="match_parent"
@@ -304,7 +389,7 @@
                 android:layout_marginLeft="@dimen/layout_margin_left_right"
                 android:layout_marginRight="@dimen/layout_margin_left_right"
                 android:layout_marginTop="@dimen/layout_margin_top_bottom"
-                android:background="@android:color/darker_gray"></View>
+                android:background="@android:color/darker_gray" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -318,7 +403,8 @@
                     android:layout_marginBottom="@dimen/layout_margin_top_bottom"
                     android:layout_marginLeft="@dimen/layout_margin_left_right"
                     android:layout_marginTop="@dimen/layout_margin_top_bottom"
-                    android:text="@string/question05_label" />
+                    android:text="@string/question05_label"
+                    android:textSize="@dimen/default_text_size" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -326,7 +412,9 @@
                     android:layout_marginBottom="@dimen/layout_margin_top_bottom"
                     android:layout_marginLeft="@dimen/layout_margin_left_right"
                     android:layout_marginTop="@dimen/layout_margin_top_bottom"
-                    android:text="@string/question05_text" />
+                    android:text="@string/question05_text"
+                    android:textSize="@dimen/default_text_size"/>
+
             </LinearLayout>
 
             <EditText
@@ -339,7 +427,7 @@
                 android:background="@drawable/rectangle"
                 android:hint="@string/q5_textbox1_hint"
                 android:imeOptions="actionDone"
-                android:inputType="textCapCharacters"
+                android:inputType="number"
                 android:paddingLeft="8dp" />
 
             <EditText
@@ -352,9 +440,23 @@
                 android:background="@drawable/rectangle"
                 android:hint="@string/q5_textbox2_hint"
                 android:imeOptions="actionDone"
-                android:inputType="textCapCharacters"
+                android:inputType="number"
                 android:paddingLeft="8dp" />
 
+
+            <TextView
+                android:id="@+id/q5_result_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/layout_margin_top_bottom"
+                android:layout_marginTop="@dimen/layout_margin_top_bottom"
+                android:layout_gravity="center_horizontal"
+                android:gravity="center_horizontal"
+                android:paddingLeft="@dimen/padding_textbox_left_right"
+                android:paddingRight="@dimen/padding_textbox_left_right"
+                android:textSize="@dimen/result_text_size"
+                android:textStyle="bold|italic"
+                android:visibility="gone" />
 
             <View
                 android:layout_width="match_parent"
@@ -363,7 +465,7 @@
                 android:layout_marginLeft="@dimen/layout_margin_left_right"
                 android:layout_marginRight="@dimen/layout_margin_left_right"
                 android:layout_marginTop="@dimen/layout_margin_top_bottom"
-                android:background="@android:color/darker_gray"></View>
+                android:background="@android:color/darker_gray" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -377,7 +479,8 @@
                     android:layout_marginBottom="@dimen/layout_margin_top_bottom"
                     android:layout_marginLeft="@dimen/layout_margin_left_right"
                     android:layout_marginTop="@dimen/layout_margin_top_bottom"
-                    android:text="@string/question06_label" />
+                    android:text="@string/question06_label"
+                    android:textSize="@dimen/default_text_size"/>
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -385,7 +488,9 @@
                     android:layout_marginBottom="@dimen/layout_margin_top_bottom"
                     android:layout_marginLeft="@dimen/layout_margin_left_right"
                     android:layout_marginTop="@dimen/layout_margin_top_bottom"
-                    android:text="@string/question06_text" />
+                    android:text="@string/question06_text"
+                    android:textSize="@dimen/default_text_size" />
+
             </LinearLayout>
 
             <RadioGroup
@@ -401,6 +506,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:paddingLeft="@dimen/padding_checkbox_radio"
+                    android:paddingRight="@dimen/padding_checkbox_radio"
                     android:text="@string/question06_answer" />
 
                 <RadioButton
@@ -408,6 +514,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:paddingLeft="@dimen/padding_checkbox_radio"
+                    android:paddingRight="@dimen/padding_checkbox_radio"
                     android:text="@string/question06_guess1" />
 
                 <RadioButton
@@ -415,6 +522,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:paddingLeft="@dimen/padding_checkbox_radio"
+                    android:paddingRight="@dimen/padding_checkbox_radio"
                     android:text="@string/question06_guess2" />
 
                 <RadioButton
@@ -422,9 +530,23 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:paddingLeft="@dimen/padding_checkbox_radio"
+                    android:paddingRight="@dimen/padding_checkbox_radio"
                     android:text="@string/question06_guess3" />
 
             </RadioGroup>
+
+            <TextView
+                android:id="@+id/q6_result_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/layout_margin_top_bottom"
+                android:layout_marginTop="@dimen/layout_margin_top_bottom"
+                android:layout_gravity="center_horizontal"
+                android:paddingLeft="@dimen/padding_textbox_left_right"
+                android:paddingRight="@dimen/padding_textbox_left_right"
+                android:textSize="@dimen/result_text_size"
+                android:textStyle="bold|italic"
+                android:visibility="gone" />
 
             <View
                 android:layout_width="match_parent"
@@ -433,7 +555,7 @@
                 android:layout_marginLeft="@dimen/layout_margin_left_right"
                 android:layout_marginRight="@dimen/layout_margin_left_right"
                 android:layout_marginTop="@dimen/layout_margin_top_bottom"
-                android:background="@android:color/darker_gray"></View>
+                android:background="@android:color/darker_gray" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -447,7 +569,8 @@
                     android:layout_marginBottom="@dimen/layout_margin_top_bottom"
                     android:layout_marginLeft="@dimen/layout_margin_left_right"
                     android:layout_marginTop="@dimen/layout_margin_top_bottom"
-                    android:text="@string/question07_label" />
+                    android:text="@string/question07_label"
+                    android:textSize="@dimen/default_text_size"/>
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -455,7 +578,8 @@
                     android:layout_marginBottom="@dimen/layout_margin_top_bottom"
                     android:layout_marginLeft="@dimen/layout_margin_left_right"
                     android:layout_marginTop="@dimen/layout_margin_top_bottom"
-                    android:text="@string/question07_text" />
+                    android:text="@string/question07_text"
+                    android:textSize="@dimen/default_text_size"/>
 
             </LinearLayout>
 
@@ -472,6 +596,21 @@
                 android:inputType="number"
                 android:paddingLeft="8dp" />
 
+            <TextView
+                android:id="@+id/q7_result_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/layout_margin_top_bottom"
+                android:layout_marginTop="@dimen/layout_margin_top_bottom"
+                android:layout_gravity="center_horizontal"
+                android:gravity="center_horizontal"
+                android:paddingLeft="@dimen/padding_textbox_left_right"
+                android:paddingRight="@dimen/padding_textbox_left_right"
+                android:textSize="@dimen/result_text_size"
+                android:textStyle="bold|italic"
+                android:visibility="gone"
+                />
+
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
@@ -479,7 +618,7 @@
                 android:layout_marginLeft="@dimen/layout_margin_left_right"
                 android:layout_marginRight="@dimen/layout_margin_left_right"
                 android:layout_marginTop="@dimen/layout_margin_top_bottom"
-                android:background="@android:color/darker_gray"></View>
+                android:background="@android:color/darker_gray" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -493,7 +632,8 @@
                     android:layout_marginBottom="@dimen/layout_margin_top_bottom"
                     android:layout_marginLeft="@dimen/layout_margin_left_right"
                     android:layout_marginTop="@dimen/layout_margin_top_bottom"
-                    android:text="@string/question08_label" />
+                    android:text="@string/question08_label"
+                    android:textSize="@dimen/default_text_size" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -501,7 +641,9 @@
                     android:layout_marginBottom="@dimen/layout_margin_top_bottom"
                     android:layout_marginLeft="@dimen/layout_margin_left_right"
                     android:layout_marginTop="@dimen/layout_margin_top_bottom"
-                    android:text="@string/question08_text" />
+                    android:text="@string/question08_text"
+                    android:textSize="@dimen/default_text_size" />
+
             </LinearLayout>
 
             <RadioGroup
@@ -517,6 +659,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:paddingLeft="@dimen/padding_checkbox_radio"
+                    android:paddingRight="@dimen/padding_checkbox_radio"
                     android:text="@string/question08_answer" />
 
                 <RadioButton
@@ -524,6 +667,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:paddingLeft="@dimen/padding_checkbox_radio"
+                    android:paddingRight="@dimen/padding_checkbox_radio"
                     android:text="@string/question08_guess1" />
 
                 <RadioButton
@@ -531,6 +675,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:paddingLeft="@dimen/padding_checkbox_radio"
+                    android:paddingRight="@dimen/padding_checkbox_radio"
                     android:text="@string/question08_guess2" />
 
                 <RadioButton
@@ -538,9 +683,24 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:paddingLeft="@dimen/padding_checkbox_radio"
+                    android:paddingRight="@dimen/padding_checkbox_radio"
                     android:text="@string/question08_guess3" />
 
             </RadioGroup>
+
+            <TextView
+                android:id="@+id/q8_result_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/layout_margin_top_bottom"
+                android:layout_marginTop="@dimen/layout_margin_top_bottom"
+                android:layout_gravity="center_horizontal"
+                android:paddingLeft="@dimen/padding_textbox_left_right"
+                android:paddingRight="@dimen/padding_textbox_left_right"
+                android:textSize="@dimen/result_text_size"
+                android:textStyle="bold|italic"
+                android:visibility="gone"
+                />
 
             <View
                 android:layout_width="match_parent"
@@ -549,7 +709,7 @@
                 android:layout_marginLeft="@dimen/layout_margin_left_right"
                 android:layout_marginRight="@dimen/layout_margin_left_right"
                 android:layout_marginTop="@dimen/layout_margin_top_bottom"
-                android:background="@android:color/darker_gray"></View>
+                android:background="@android:color/darker_gray" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -563,7 +723,8 @@
                     android:layout_marginBottom="@dimen/layout_margin_top_bottom"
                     android:layout_marginLeft="@dimen/layout_margin_left_right"
                     android:layout_marginTop="@dimen/layout_margin_top_bottom"
-                    android:text="@string/question09_label" />
+                    android:text="@string/question09_label"
+                    android:textSize="@dimen/default_text_size"/>
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -571,7 +732,8 @@
                     android:layout_marginBottom="@dimen/layout_margin_top_bottom"
                     android:layout_marginLeft="@dimen/layout_margin_left_right"
                     android:layout_marginTop="@dimen/layout_margin_top_bottom"
-                    android:text="@string/question09_text" />
+                    android:text="@string/question09_text"
+                    android:textSize="@dimen/default_text_size"/>
 
             </LinearLayout>
 
@@ -588,6 +750,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:paddingLeft="@dimen/padding_checkbox_radio"
+                    android:paddingRight="@dimen/padding_checkbox_radio"
                     android:text="@string/question09_guess3" />
 
                 <RadioButton
@@ -595,6 +758,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:paddingLeft="@dimen/padding_checkbox_radio"
+                    android:paddingRight="@dimen/padding_checkbox_radio"
                     android:text="@string/question09_guess2" />
 
                 <RadioButton
@@ -602,6 +766,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:paddingLeft="@dimen/padding_checkbox_radio"
+                    android:paddingRight="@dimen/padding_checkbox_radio"
                     android:text="@string/question09_guess1" />
 
                 <RadioButton
@@ -609,9 +774,23 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:paddingLeft="@dimen/padding_checkbox_radio"
+                    android:paddingRight="@dimen/padding_checkbox_radio"
                     android:text="@string/question09_answer" />
 
             </RadioGroup>
+
+            <TextView
+                android:id="@+id/q9_result_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/layout_margin_top_bottom"
+                android:layout_marginTop="@dimen/layout_margin_top_bottom"
+                android:layout_gravity="center_horizontal"
+                android:paddingLeft="@dimen/padding_textbox_left_right"
+                android:paddingRight="@dimen/padding_textbox_left_right"
+                android:textSize="@dimen/result_text_size"
+                android:textStyle="bold|italic"
+                android:visibility="gone" />
 
             <View
                 android:layout_width="match_parent"
@@ -620,7 +799,7 @@
                 android:layout_marginLeft="@dimen/layout_margin_left_right"
                 android:layout_marginRight="@dimen/layout_margin_left_right"
                 android:layout_marginTop="@dimen/layout_margin_top_bottom"
-                android:background="@android:color/darker_gray"></View>
+                android:background="@android:color/darker_gray" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -634,7 +813,8 @@
                     android:layout_marginBottom="8dp"
                     android:layout_marginLeft="16dp"
                     android:layout_marginTop="8dp"
-                    android:text="@string/question10_label" />
+                    android:text="@string/question10_label"
+                    android:textSize="@dimen/default_text_size"/>
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -642,7 +822,8 @@
                     android:layout_marginBottom="@dimen/layout_margin_top_bottom"
                     android:layout_marginLeft="@dimen/layout_margin_left_right"
                     android:layout_marginTop="@dimen/layout_margin_top_bottom"
-                    android:text="@string/question10_text" />
+                    android:text="@string/question10_text"
+                    android:textSize="@dimen/default_text_size" />
 
             </LinearLayout>
 
@@ -659,6 +840,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:paddingLeft="@dimen/padding_checkbox_radio"
+                    android:paddingRight="@dimen/padding_checkbox_radio"
                     android:text="@string/question10_answer" />
 
                 <RadioButton
@@ -666,6 +848,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:paddingLeft="@dimen/padding_checkbox_radio"
+                    android:paddingRight="@dimen/padding_checkbox_radio"
                     android:text="@string/question10_guess1" />
 
                 <RadioButton
@@ -673,6 +856,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:paddingLeft="@dimen/padding_checkbox_radio"
+                    android:paddingRight="@dimen/padding_checkbox_radio"
                     android:text="@string/question10_guess2" />
 
                 <RadioButton
@@ -680,9 +864,22 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:paddingLeft="@dimen/padding_checkbox_radio"
+                    android:paddingRight="@dimen/padding_checkbox_radio"
                     android:text="@string/question10_guess3" />
-
             </RadioGroup>
+
+            <TextView
+                android:id="@+id/q10_result_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/layout_margin_top_bottom"
+                android:layout_marginTop="@dimen/layout_margin_top_bottom"
+                android:layout_gravity="center_horizontal"
+                android:paddingLeft="@dimen/padding_textbox_left_right"
+                android:paddingRight="@dimen/padding_textbox_left_right"
+                android:textSize="@dimen/result_text_size"
+                android:textStyle="bold|italic"
+                android:visibility="gone" />
 
             <View
                 android:layout_width="match_parent"
@@ -691,7 +888,7 @@
                 android:layout_marginLeft="@dimen/layout_margin_left_right"
                 android:layout_marginRight="@dimen/layout_margin_left_right"
                 android:layout_marginTop="@dimen/layout_margin_top_bottom"
-                android:background="@android:color/darker_gray"></View>
+                android:background="@android:color/darker_gray" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -705,7 +902,8 @@
                     android:layout_marginBottom="@dimen/layout_margin_top_bottom"
                     android:layout_marginLeft="@dimen/layout_margin_left_right"
                     android:layout_marginTop="@dimen/layout_margin_top_bottom"
-                    android:text="@string/question11_label" />
+                    android:text="@string/question11_label"
+                    android:textSize="@dimen/default_text_size"/>
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -713,7 +911,8 @@
                     android:layout_marginBottom="@dimen/layout_margin_top_bottom"
                     android:layout_marginLeft="@dimen/layout_margin_left_right"
                     android:layout_marginTop="@dimen/layout_margin_top_bottom"
-                    android:text="@string/question11_text" />
+                    android:text="@string/question11_text"
+                    android:textSize="@dimen/default_text_size" />
 
             </LinearLayout>
 
@@ -723,6 +922,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="@dimen/answer_left_indent"
                 android:layout_marginRight="@dimen/layout_margin_left_right"
+                android:paddingLeft="@dimen/padding_checkbox_radio"
+                android:paddingRight="@dimen/padding_checkbox_radio"
                 android:text="@string/question11_guess1" />
 
             <CheckBox
@@ -731,6 +932,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="@dimen/answer_left_indent"
                 android:layout_marginRight="@dimen/layout_margin_left_right"
+                android:paddingLeft="@dimen/padding_checkbox_radio"
+                android:paddingRight="@dimen/padding_checkbox_radio"
                 android:text="@string/question11_guess2" />
 
             <CheckBox
@@ -739,6 +942,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="@dimen/answer_left_indent"
                 android:layout_marginRight="@dimen/layout_margin_left_right"
+                android:paddingLeft="@dimen/padding_checkbox_radio"
+                android:paddingRight="@dimen/padding_checkbox_radio"
                 android:text="@string/question11_guess3" />
 
             <CheckBox
@@ -747,7 +952,22 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="@dimen/answer_left_indent"
                 android:layout_marginRight="@dimen/layout_margin_left_right"
+                android:paddingLeft="@dimen/padding_checkbox_radio"
+                android:paddingRight="@dimen/padding_checkbox_radio"
                 android:text="@string/question11_guess4" />
+
+            <TextView
+                android:id="@+id/q11_result_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/layout_margin_top_bottom"
+                android:layout_marginTop="@dimen/layout_margin_top_bottom"
+                android:layout_gravity="center_horizontal"
+                android:paddingLeft="@dimen/padding_textbox_left_right"
+                android:paddingRight="@dimen/padding_textbox_left_right"
+                android:textSize="@dimen/result_text_size"
+                android:textStyle="bold|italic"
+                android:visibility="gone" />
 
             <View
                 android:layout_width="match_parent"
@@ -756,7 +976,7 @@
                 android:layout_marginLeft="@dimen/layout_margin_left_right"
                 android:layout_marginRight="@dimen/layout_margin_left_right"
                 android:layout_marginTop="@dimen/layout_margin_top_bottom"
-                android:background="@android:color/darker_gray"></View>
+                android:background="@android:color/darker_gray" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -770,7 +990,8 @@
                     android:layout_marginBottom="@dimen/layout_margin_top_bottom"
                     android:layout_marginLeft="@dimen/layout_margin_left_right"
                     android:layout_marginTop="@dimen/layout_margin_top_bottom"
-                    android:text="@string/question12_label" />
+                    android:text="@string/question12_label"
+                    android:textSize="@dimen/default_text_size" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -778,7 +999,8 @@
                     android:layout_marginBottom="@dimen/layout_margin_top_bottom"
                     android:layout_marginLeft="@dimen/layout_margin_left_right"
                     android:layout_marginTop="@dimen/layout_margin_top_bottom"
-                    android:text="@string/question12_text" />
+                    android:text="@string/question12_text"
+                    android:textSize="@dimen/default_text_size" />
 
             </LinearLayout>
 
@@ -795,6 +1017,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:paddingLeft="@dimen/padding_checkbox_radio"
+                    android:paddingRight="@dimen/padding_checkbox_radio"
                     android:text="@string/question12_guess1" />
 
                 <RadioButton
@@ -802,6 +1025,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:paddingLeft="@dimen/padding_checkbox_radio"
+                    android:paddingRight="@dimen/padding_checkbox_radio"
                     android:text="@string/question12_guess2" />
 
                 <RadioButton
@@ -809,6 +1033,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:paddingLeft="@dimen/padding_checkbox_radio"
+                    android:paddingRight="@dimen/padding_checkbox_radio"
                     android:text="@string/question12_guess3" />
 
                 <RadioButton
@@ -816,23 +1041,34 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:paddingLeft="@dimen/padding_checkbox_radio"
+                    android:paddingRight="@dimen/padding_checkbox_radio"
                     android:text="@string/question12_answer" />
-
             </RadioGroup>
 
             <TextView
-                android:id="@+id/quiz_result_textview"
+                android:id="@+id/q12_result_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginTop="@dimen/layout_margin_top_bottom"
                 android:layout_marginBottom="@dimen/layout_margin_top_bottom"
-                android:padding="@dimen/layout_margin_top_bottom"
-                android:background="@drawable/rectangle"
+                android:layout_marginTop="@dimen/layout_margin_top_bottom"
+                android:layout_gravity="center_horizontal"
+                android:paddingLeft="@dimen/padding_textbox_left_right"
+                android:paddingRight="@dimen/padding_textbox_left_right"
                 android:textSize="@dimen/result_text_size"
+                android:textStyle="bold|italic"
                 android:visibility="gone" />
 
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginBottom="@dimen/layout_margin_top_bottom"
+                android:layout_marginLeft="@dimen/layout_margin_left_right"
+                android:layout_marginRight="@dimen/layout_margin_left_right"
+                android:layout_marginTop="@dimen/layout_margin_top_bottom"
+                android:background="@android:color/darker_gray" />
+
             <Button
+                android:id="@+id/submit_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"

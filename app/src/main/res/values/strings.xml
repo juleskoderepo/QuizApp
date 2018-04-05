@@ -5,7 +5,7 @@
     <string name="edittext_hint">Type answer here</string>
     <string name="question01_label">Question #1:</string>
     <string name="question01_text">In the opening scene, what is the name of the funeral home Loretta enters?</string>
-    <string name="question01_answer">nucciarone</string>
+    <string name="question01_answer">Nucciarone</string>
     <string name="question02_label">Question #2:</string>
     <string name="question02_text">In which restaurant do Loretta and Johnny get engaged?</string>
     <string name="question02_answer">Gran Ticino</string>
@@ -63,7 +63,7 @@
     <string name="question11_guess1">His mother\'s house.</string>
     <string name="question11_guess2">The airport.</string>
     <string name="question11_guess3">The cab.</string>
-    <string name="question11_guess4">The Castorini\'s house.</string>
+    <string name="question11_guess4">The Castorinis\' house.</string>
     <string name="question12_label">Question #12:</string>
     <string name="question12_text">Why does Johnny break off the engagement?</string>
     <string name="question12_answer">His mother will die if he gets married.</string>
@@ -71,5 +71,12 @@
     <string name="question12_guess2">Loretta slept with Ronny.</string>
     <string name="question12_guess3">His mother told him to.</string>
     <string name="submit_button_text">Submit</string>
+    <string name="result_msg_score">Score:</string>
+    <string name="result_correct_text">Correct!</string>
+    <string name="result_incorrect_text">Incorrect</string>
+    <string name="correct_answer_text">The correct answer is:</string>
+    <string name="congrats">Eccelente!</string>
+    <string name="good_job">Good job.</string>
+    <string name="try_again">Try again.</string>
 
 </resources>
