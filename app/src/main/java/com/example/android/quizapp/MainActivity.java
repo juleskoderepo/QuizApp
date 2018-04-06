@@ -19,10 +19,94 @@ public class MainActivity extends AppCompatActivity {
     float q5_sub_score = 0;
     float q11_sub_score = 0;
 
+    EditText q1Guess;
+    TextView q1Result;
+    RadioGroup q2RadioGrp;
+    RadioButton q2CorrectAnswer;
+    TextView q2Result;
+    CheckBox q3CB1;
+    CheckBox q3CB2;
+    CheckBox q3CB3;
+    CheckBox q3CB4;
+    TextView q3Result;
+    RadioGroup q4RadioGrp;
+    RadioButton q4CorrectAnswer;
+    TextView q4Result;
+    EditText q5GateGuess;
+    EditText q5FltGuess;
+    TextView q5Result;
+    RadioGroup q6RadioGrp;
+    RadioButton q6CorrectAnswer;
+    TextView q6Result;
+    EditText q7Guess;
+    TextView q7Result;
+    RadioGroup q8RadioGrp;
+    RadioButton q8CorrectAnswer;
+    TextView q8Result;
+    RadioGroup q9RadioGrp;
+    RadioButton q9CorrectAnswer;
+    TextView q9Result;
+    RadioGroup q10RadioGrp;
+    RadioButton q10CorrectAnswer;
+    TextView q10Result;
+    CheckBox q11CB1;
+    CheckBox q11CB2;
+    CheckBox q11CB3;
+    CheckBox q11CB4;
+    TextView q11Result;
+    RadioGroup q12RadioGrp;
+    RadioButton q12CorrectAnswer;
+    TextView q12Result;
+
+    public static final String KEY_savedTextQ1 = "savedGuessQ1";
+    public static final String KEY_savedGateTextQ5 = "savedGateGuessQ5";
+    public static final String KEY_savedFltTextQ5 = "savedFltGuessQ5";
+    public static final String KEY_savedTextQ7 = "savedGuessQ7";
+    public static final String KEY_savedScore = "savedQuizScore";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        q1Guess = findViewById(R.id.q1_textbox);
+        q1Result = findViewById(R.id.q1_result_text);
+        q2RadioGrp = findViewById(R.id.q2_radioGroup);
+        q2CorrectAnswer = findViewById(R.id.q2_radio_answer);
+        q2Result = findViewById(R.id.q2_result_text);
+        q3CB1 = findViewById(R.id.q3_check_guess1);
+        q3CB2 = findViewById(R.id.q3_check_guess2);
+        q3CB3 = findViewById(R.id.q3_check_guess3);
+        q3CB4 = findViewById(R.id.q3_check_guess4);
+        q3Result = findViewById(R.id.q3_result_text);
+        q4RadioGrp = findViewById(R.id.q4_radioGroup);
+        q4CorrectAnswer = findViewById(R.id.q4_radio3);
+        q4Result = findViewById(R.id.q4_result_text);
+        q5GateGuess = findViewById(R.id.q5_textbox1);
+        q5FltGuess = findViewById(R.id.q5_textbox2);
+        q5Result = findViewById(R.id.q5_result_text);
+        q6RadioGrp = findViewById(R.id.q6_radioGroup);
+        q6CorrectAnswer = findViewById(R.id.q6_radio1);
+        q6Result = findViewById(R.id.q6_result_text);
+        q7Guess = findViewById(R.id.q7_textbox);
+        q7Result = findViewById(R.id.q7_result_text);
+        q8RadioGrp = findViewById(R.id.q8_radioGroup);
+        q8CorrectAnswer = findViewById(R.id.q8_radio1);
+        q8Result = findViewById(R.id.q8_result_text);
+        q9RadioGrp = findViewById(R.id.q9_radioGroup);
+        q9CorrectAnswer = findViewById(R.id.q9_radio4);
+        q9Result = findViewById(R.id.q9_result_text);
+        q10RadioGrp = findViewById(R.id.q10_radioGroup);
+        q10CorrectAnswer = findViewById(R.id.q10_radio1);
+        q10Result = findViewById(R.id.q10_result_text);
+        q11CB1 = findViewById(R.id.q11_check_guess1);
+        q11CB2 = findViewById(R.id.q11_check_guess2);
+        q11CB3 = findViewById(R.id.q11_check_guess3);
+        q11CB4 = findViewById(R.id.q11_check_guess4);
+        q11Result = findViewById(R.id.q11_result_text);
+        q12RadioGrp = findViewById(R.id.q12_radioGroup);
+        q12CorrectAnswer = findViewById(R.id.q12_radio4);
+        q12Result = findViewById(R.id.q12_result_text);
     }
 
 
@@ -40,23 +124,23 @@ public class MainActivity extends AppCompatActivity {
         //save state of text boxes
         final EditText guess_Q1 = findViewById(R.id.q1_textbox);
         CharSequence guessText_Q1 = guess_Q1.getText();
-        savedInstanceState.putCharSequence("savedGuessQ1", guessText_Q1);
+        savedInstanceState.putCharSequence(KEY_savedTextQ1, guessText_Q1);
 
         final EditText gate_guess_Q5 = findViewById(R.id.q5_textbox1);
         CharSequence gate_text_Q5 = gate_guess_Q5.getText();
-        savedInstanceState.putCharSequence("savedGateGuessQ5", gate_text_Q5);
+        savedInstanceState.putCharSequence(KEY_savedGateTextQ5, gate_text_Q5);
 
         final EditText flt_guess_Q5 = findViewById(R.id.q5_textbox2);
         CharSequence flt_text_Q5 = flt_guess_Q5.getText();
-        savedInstanceState.putCharSequence("savedFltGuessQ5", flt_text_Q5);
+        savedInstanceState.putCharSequence(KEY_savedFltTextQ5, flt_text_Q5);
 
         final EditText guess_Q7 = findViewById(R.id.q7_textbox);
         CharSequence guessText_Q7 = guess_Q7.getText();
-        savedInstanceState.putCharSequence("savedGuessQ7", guessText_Q7);
+        savedInstanceState.putCharSequence(KEY_savedTextQ7, guessText_Q7);
 
 
         //save quiz score
-        savedInstanceState.putInt("savedQuizScore", quiz_score);
+        savedInstanceState.putInt(KEY_savedScore, quiz_score);
 
     }
 
@@ -75,24 +159,24 @@ public class MainActivity extends AppCompatActivity {
 
         //restore text box values
         final EditText guess_Q1 = findViewById(R.id.q1_textbox);
-        CharSequence guessText_Q1 = savedInstanceState.getCharSequence("savedGuessQ1");
+        CharSequence guessText_Q1 = savedInstanceState.getCharSequence(KEY_savedTextQ1);
         guess_Q1.setText(guessText_Q1);
 
         final EditText gate_guess_Q5 = findViewById(R.id.q5_textbox1);
-        CharSequence gate_text_Q5 = savedInstanceState.getCharSequence("savedGateGuessQ5");
+        CharSequence gate_text_Q5 = savedInstanceState.getCharSequence(KEY_savedGateTextQ5);
         gate_guess_Q5.setText(gate_text_Q5);
 
         final EditText flt_guess_Q5 = findViewById(R.id.q5_textbox2);
-        CharSequence flt_text_Q5 = savedInstanceState.getCharSequence("savedFltGuessQ5");
+        CharSequence flt_text_Q5 = savedInstanceState.getCharSequence(KEY_savedFltTextQ5);
         flt_guess_Q5.setText(flt_text_Q5);
 
         final EditText guess_Q7 = findViewById(R.id.q7_textbox);
-        CharSequence guessText_Q7 = savedInstanceState.getCharSequence("savedGuessQ7");
+        CharSequence guessText_Q7 = savedInstanceState.getCharSequence(KEY_savedTextQ7);
         guess_Q7.setText(guessText_Q7);
 
 
         //restore quiz score
-        quiz_score = savedInstanceState.getInt("savedQuizScore");
+        quiz_score = savedInstanceState.getInt(KEY_savedScore);
     }
 
     /**
@@ -112,14 +196,14 @@ public class MainActivity extends AppCompatActivity {
         removeHighlighting();
 
         //check answer to Question 1
-        EditText guess_Q1 = findViewById(R.id.q1_textbox);
-        String q1Guess = guess_Q1.getText().toString();
+        String q1Text = q1Guess.getText().toString();
+
         //capitalize first letter of guess for comparison to correct answer
-        if (q1Guess.trim().length() > 1) {
-            q1Guess = q1Guess.substring(0, 1).toUpperCase() + q1Guess.substring(1).toLowerCase();
+        if (q1Text.trim().length() > 1) {
+            q1Text = q1Text.substring(0, 1).toUpperCase() + q1Text.substring(1).toLowerCase();
         }
 
-        if (q1Guess.equals(getString(R.string.question01_answer))) {
+        if (q1Text.equals(getString(R.string.question01_answer))) {
             quiz_score += 1;
             displayCorrectResult("Q1");
         } else {
@@ -127,35 +211,28 @@ public class MainActivity extends AppCompatActivity {
         }
 
         //check answer to Question 2
-        RadioButton q2_correct_answer = findViewById(R.id.q2_radio_answer);
-
-        if (q2_correct_answer.isChecked()) {
+        if (q2CorrectAnswer.isChecked()) {
             quiz_score += 1;
             displayCorrectResult("Q2");
         } else {
             displayIncorrectResult("Q2");
-            q2_correct_answer.setBackgroundResource(R.color.correctColor);
+            q2CorrectAnswer.setBackgroundResource(R.color.correctColor);
         }
 
         //check answer to Question 3
-        CheckBox q3_cb1 = findViewById(R.id.q3_check_guess1);
-        CheckBox q3_cb2 = findViewById(R.id.q3_check_guess2);
-        CheckBox q3_cb3 = findViewById(R.id.q3_check_guess3);
-        CheckBox q3_cb4 = findViewById(R.id.q3_check_guess4);
-
-        if (q3_cb1.isChecked()) {
+        if (q3CB1.isChecked()) {
             q3_sub_score += .25;
         }
 
-        if (q3_cb2.isChecked()) {
+        if (q3CB2.isChecked()) {
             q3_sub_score += .25;
         }
 
-        if (q3_cb3.isChecked()) {
+        if (q3CB3.isChecked()) {
             q3_sub_score += .25;
         }
 
-        if (q3_cb4.isChecked()) {
+        if (q3CB4.isChecked()) {
             q3_sub_score += .25;
         }
 
@@ -165,35 +242,31 @@ public class MainActivity extends AppCompatActivity {
         } else {
             displayIncorrectResult("Q3");
 
-            q3_cb1.setBackgroundResource(R.color.correctColor);
-            q3_cb2.setBackgroundResource(R.color.correctColor);
-            q3_cb3.setBackgroundResource(R.color.correctColor);
-            q3_cb4.setBackgroundResource(R.color.correctColor);
+            q3CB1.setBackgroundResource(R.color.correctColor);
+            q3CB2.setBackgroundResource(R.color.correctColor);
+            q3CB3.setBackgroundResource(R.color.correctColor);
+            q3CB4.setBackgroundResource(R.color.correctColor);
         }
 
         //check answer to Question 4
-        RadioButton q4_correct_answer = findViewById(R.id.q4_radio3);
-
-        if (q4_correct_answer.isChecked()) {
+        if (q4CorrectAnswer.isChecked()) {
             quiz_score += 1;
             displayCorrectResult("Q4");
         } else {
             displayIncorrectResult("Q4");
-            q4_correct_answer.setBackgroundResource(R.color.correctColor);
+            q4CorrectAnswer.setBackgroundResource(R.color.correctColor);
         }
 
         //check answers to Question 5
         //check gate answer
-        EditText q5_Gate = findViewById(R.id.q5_textbox1);
-        String q5_gate_guess = q5_Gate.getText().toString();
-        if (q5_gate_guess.equals(getString(R.string.question05_answer_gate))) {
+        String q5GateText = q5GateGuess.getText().toString();
+        if (q5GateText.equals(getString(R.string.question05_answer_gate))) {
             q5_sub_score += .5;
         }
 
         //check flight answer
-        EditText q5_Flight = findViewById(R.id.q5_textbox2);
-        String q5_flight_guess = q5_Flight.getText().toString();
-        if (q5_flight_guess.equals(getString(R.string.question05_answer_flight))) {
+        String q5FlightText = q5FltGuess.getText().toString();
+        if (q5FlightText.equals(getString(R.string.question05_answer_flight))) {
             q5_sub_score += .5;
         }
 
@@ -205,22 +278,19 @@ public class MainActivity extends AppCompatActivity {
         }
 
         //check answer to Question 6
-        RadioButton q6_correct_answer = findViewById(R.id.q6_radio1);
-
-        if (q6_correct_answer.isChecked()) {
+        if (q6CorrectAnswer.isChecked()) {
             quiz_score += 1;
             displayCorrectResult("Q6");
         } else {
             displayIncorrectResult("Q6");
-            q6_correct_answer.setBackgroundResource(R.color.correctColor);
+            q6CorrectAnswer.setBackgroundResource(R.color.correctColor);
         }
 
 
         //check answer to Question 7
-        EditText guess_Q7 = findViewById(R.id.q7_textbox);
-        String q7_string = guess_Q7.getText().toString();
+        String q7Text = q7Guess.getText().toString();
 
-        if (q7_string.equals(getString(R.string.question07_answer))) {
+        if (q7Text.equals(getString(R.string.question07_answer))) {
             quiz_score += 1;
             displayCorrectResult("Q7");
         } else {
@@ -228,57 +298,46 @@ public class MainActivity extends AppCompatActivity {
         }
 
         //check answer to Question 8
-        RadioButton q8_correct_answer = findViewById(R.id.q8_radio1);
-
-        if (q8_correct_answer.isChecked()) {
+        if (q8CorrectAnswer.isChecked()) {
             quiz_score += 1;
             displayCorrectResult("Q8");
         } else {
             displayIncorrectResult("Q8");
-            q8_correct_answer.setBackgroundResource(R.color.correctColor);
+            q8CorrectAnswer.setBackgroundResource(R.color.correctColor);
         }
 
         //check answer to Question 9
-        RadioButton q9_correct_answer = findViewById(R.id.q9_radio4);
-
-        if (q9_correct_answer.isChecked()) {
+        if (q9CorrectAnswer.isChecked()) {
             quiz_score += 1;
             displayCorrectResult("Q9");
         } else {
             displayIncorrectResult("Q9");
-            q9_correct_answer.setBackgroundResource(R.color.correctColor);
+            q9CorrectAnswer.setBackgroundResource(R.color.correctColor);
         }
 
         //check answer to Question 10
-        RadioButton q10_correct_answer = findViewById(R.id.q10_radio1);
-
-        if (q10_correct_answer.isChecked()) {
+        if (q10CorrectAnswer.isChecked()) {
             quiz_score += 1;
             displayCorrectResult("Q10");
         } else {
             displayIncorrectResult("Q10");
-            q10_correct_answer.setBackgroundResource(R.color.correctColor);
+            q10CorrectAnswer.setBackgroundResource(R.color.correctColor);
         }
 
         //check answer to Question 11
-        CheckBox q11_cb1 = findViewById(R.id.q11_check_guess1);
-        CheckBox q11_cb2 = findViewById(R.id.q11_check_guess2);
-        CheckBox q11_cb3 = findViewById(R.id.q11_check_guess3);
-        CheckBox q11_cb4 = findViewById(R.id.q11_check_guess4);
-
-        if (q11_cb1.isChecked()) {
+        if (q11CB1.isChecked()) {
             q11_sub_score += -1;
         }
 
-        if (q11_cb2.isChecked()) {
+        if (q11CB2.isChecked()) {
             q11_sub_score += .333;
         }
 
-        if (q11_cb3.isChecked()) {
+        if (q11CB3.isChecked()) {
             q11_sub_score += .333;
         }
 
-        if (q11_cb4.isChecked()) {
+        if (q11CB4.isChecked()) {
             q11_sub_score += .334;
         }
 
@@ -287,20 +346,18 @@ public class MainActivity extends AppCompatActivity {
             displayCorrectResult("Q11");
         } else {
             displayIncorrectResult("Q11");
-            q11_cb2.setBackgroundResource(R.color.correctColor);
-            q11_cb3.setBackgroundResource(R.color.correctColor);
-            q11_cb4.setBackgroundResource(R.color.correctColor);
+            q11CB2.setBackgroundResource(R.color.correctColor);
+            q11CB3.setBackgroundResource(R.color.correctColor);
+            q11CB4.setBackgroundResource(R.color.correctColor);
         }
 
         //check answer to Question 12
-        RadioButton q12_correct_answer = findViewById(R.id.q12_radio4);
-
-        if (q12_correct_answer.isChecked()) {
+        if (q12CorrectAnswer.isChecked()) {
             quiz_score += 1;
             displayCorrectResult("Q12");
         } else {
             displayIncorrectResult("Q12");
-            q12_correct_answer.setBackgroundResource(R.color.correctColor);
+            q12CorrectAnswer.setBackgroundResource(R.color.correctColor);
         }
 
         displayScore(quiz_score);
@@ -314,79 +371,66 @@ public class MainActivity extends AppCompatActivity {
      *                    the form, "Qx" where x is an integer 1-12.
      */
     public void displayCorrectResult(String questionNum) {
-        TextView result_Q1 = findViewById(R.id.q1_result_text);
-        TextView result_Q2 = findViewById(R.id.q2_result_text);
-        TextView result_Q3 = findViewById(R.id.q3_result_text);
-        TextView result_Q4 = findViewById(R.id.q4_result_text);
-        TextView result_Q5 = findViewById(R.id.q5_result_text);
-        TextView result_Q6 = findViewById(R.id.q6_result_text);
-        TextView result_Q7 = findViewById(R.id.q7_result_text);
-        TextView result_Q8 = findViewById(R.id.q8_result_text);
-        TextView result_Q9 = findViewById(R.id.q9_result_text);
-        TextView result_Q10 = findViewById(R.id.q10_result_text);
-        TextView result_Q11 = findViewById(R.id.q11_result_text);
-        TextView result_Q12 = findViewById(R.id.q12_result_text);
-
         switch (questionNum) {
             case "Q1":
-                result_Q1.setBackgroundColor(getResources().getColor(R.color.correctColor));
-                result_Q1.setText(getResources().getString(R.string.result_correct_text));
-                result_Q1.setVisibility(View.VISIBLE);
+                q1Result.setBackgroundColor(getResources().getColor(R.color.correctColor));
+                q1Result.setText(getResources().getString(R.string.result_correct_text));
+                q1Result.setVisibility(View.VISIBLE);
                 break;
             case "Q2":
-                result_Q2.setBackgroundColor(getResources().getColor(R.color.correctColor));
-                result_Q2.setText(getResources().getString(R.string.result_correct_text));
-                result_Q2.setVisibility(View.VISIBLE);
+                q2Result.setBackgroundColor(getResources().getColor(R.color.correctColor));
+                q2Result.setText(getResources().getString(R.string.result_correct_text));
+                q2Result.setVisibility(View.VISIBLE);
                 break;
             case "Q3":
-                result_Q3.setBackgroundColor(getResources().getColor(R.color.correctColor));
-                result_Q3.setText(getResources().getString(R.string.result_correct_text));
-                result_Q3.setVisibility(View.VISIBLE);
+                q3Result.setBackgroundColor(getResources().getColor(R.color.correctColor));
+                q3Result.setText(getResources().getString(R.string.result_correct_text));
+                q3Result.setVisibility(View.VISIBLE);
                 break;
             case "Q4":
-                result_Q4.setBackgroundColor(getResources().getColor(R.color.correctColor));
-                result_Q4.setText(getResources().getString(R.string.result_correct_text));
-                result_Q4.setVisibility(View.VISIBLE);
+                q4Result.setBackgroundColor(getResources().getColor(R.color.correctColor));
+                q4Result.setText(getResources().getString(R.string.result_correct_text));
+                q4Result.setVisibility(View.VISIBLE);
                 break;
             case "Q5":
-                result_Q5.setBackgroundColor(getResources().getColor(R.color.correctColor));
-                result_Q5.setText(getResources().getString(R.string.result_correct_text));
-                result_Q5.setVisibility(View.VISIBLE);
+                q5Result.setBackgroundColor(getResources().getColor(R.color.correctColor));
+                q5Result.setText(getResources().getString(R.string.result_correct_text));
+                q5Result.setVisibility(View.VISIBLE);
                 break;
             case "Q6":
-                result_Q6.setBackgroundColor(getResources().getColor(R.color.correctColor));
-                result_Q6.setText(getResources().getString(R.string.result_correct_text));
-                result_Q6.setVisibility(View.VISIBLE);
+                q6Result.setBackgroundColor(getResources().getColor(R.color.correctColor));
+                q6Result.setText(getResources().getString(R.string.result_correct_text));
+                q6Result.setVisibility(View.VISIBLE);
                 break;
             case "Q7":
-                result_Q7.setBackgroundColor(getResources().getColor(R.color.correctColor));
-                result_Q7.setText(getResources().getString(R.string.result_correct_text));
-                result_Q7.setVisibility(View.VISIBLE);
+                q7Result.setBackgroundColor(getResources().getColor(R.color.correctColor));
+                q7Result.setText(getResources().getString(R.string.result_correct_text));
+                q7Result.setVisibility(View.VISIBLE);
                 break;
             case "Q8":
-                result_Q8.setBackgroundColor(getResources().getColor(R.color.correctColor));
-                result_Q8.setText(getResources().getString(R.string.result_correct_text));
-                result_Q8.setVisibility(View.VISIBLE);
+                q8Result.setBackgroundColor(getResources().getColor(R.color.correctColor));
+                q8Result.setText(getResources().getString(R.string.result_correct_text));
+                q8Result.setVisibility(View.VISIBLE);
                 break;
             case "Q9":
-                result_Q9.setBackgroundColor(getResources().getColor(R.color.correctColor));
-                result_Q9.setText(getResources().getString(R.string.result_correct_text));
-                result_Q9.setVisibility(View.VISIBLE);
+                q9Result.setBackgroundColor(getResources().getColor(R.color.correctColor));
+                q9Result.setText(getResources().getString(R.string.result_correct_text));
+                q9Result.setVisibility(View.VISIBLE);
                 break;
             case "Q10":
-                result_Q10.setBackgroundColor(getResources().getColor(R.color.correctColor));
-                result_Q10.setText(getResources().getString(R.string.result_correct_text));
-                result_Q10.setVisibility(View.VISIBLE);
+                q10Result.setBackgroundColor(getResources().getColor(R.color.correctColor));
+                q10Result.setText(getResources().getString(R.string.result_correct_text));
+                q10Result.setVisibility(View.VISIBLE);
                 break;
             case "Q11":
-                result_Q11.setBackgroundColor(getResources().getColor(R.color.correctColor));
-                result_Q11.setText(getResources().getString(R.string.result_correct_text));
-                result_Q11.setVisibility(View.VISIBLE);
+                q11Result.setBackgroundColor(getResources().getColor(R.color.correctColor));
+                q11Result.setText(getResources().getString(R.string.result_correct_text));
+                q11Result.setVisibility(View.VISIBLE);
                 break;
             case "Q12":
-                result_Q12.setBackgroundColor(getResources().getColor(R.color.correctColor));
-                result_Q12.setText(getResources().getString(R.string.result_correct_text));
-                result_Q12.setVisibility(View.VISIBLE);
+                q12Result.setBackgroundColor(getResources().getColor(R.color.correctColor));
+                q12Result.setText(getResources().getString(R.string.result_correct_text));
+                q12Result.setVisibility(View.VISIBLE);
                 break;
         }
     }
@@ -400,49 +444,36 @@ public class MainActivity extends AppCompatActivity {
      *                    the form, "Qx" where x is an integer 1-12.
      */
     public void displayIncorrectResult(String questionNum) {
-        TextView result_Q1 = findViewById(R.id.q1_result_text);
-        TextView result_Q2 = findViewById(R.id.q2_result_text);
-        TextView result_Q3 = findViewById(R.id.q3_result_text);
-        TextView result_Q4 = findViewById(R.id.q4_result_text);
-        TextView result_Q5 = findViewById(R.id.q5_result_text);
-        TextView result_Q6 = findViewById(R.id.q6_result_text);
-        TextView result_Q7 = findViewById(R.id.q7_result_text);
-        TextView result_Q8 = findViewById(R.id.q8_result_text);
-        TextView result_Q9 = findViewById(R.id.q9_result_text);
-        TextView result_Q10 = findViewById(R.id.q10_result_text);
-        TextView result_Q11 = findViewById(R.id.q11_result_text);
-        TextView result_Q12 = findViewById(R.id.q12_result_text);
-
         switch (questionNum) {
             case "Q1":
                 String incorrect_Q1 = getResources().getString(R.string.result_incorrect_text) +
                         "\n" + getResources().getString(R.string.correct_answer_text) +
                         " " + getResources().getString(R.string.question01_answer);
 
-                result_Q1.setBackgroundColor(getResources().getColor(R.color.incorrectColor));
-                result_Q1.setText(incorrect_Q1);
-                result_Q1.setVisibility(View.VISIBLE);
+                q1Result.setBackgroundColor(getResources().getColor(R.color.incorrectColor));
+                q1Result.setText(incorrect_Q1);
+                q1Result.setVisibility(View.VISIBLE);
                 break;
             case "Q2":
                 String incorrect_Q2 = getResources().getString(R.string.result_incorrect_text);
 
-                result_Q2.setBackgroundColor(getResources().getColor(R.color.incorrectColor));
-                result_Q2.setText(incorrect_Q2);
-                result_Q2.setVisibility(View.VISIBLE);
+                q2Result.setBackgroundColor(getResources().getColor(R.color.incorrectColor));
+                q2Result.setText(incorrect_Q2);
+                q2Result.setVisibility(View.VISIBLE);
                 break;
             case "Q3":
                 String incorrect_Q3 = getResources().getString(R.string.result_incorrect_text);
 
-                result_Q3.setBackgroundColor(getResources().getColor(R.color.incorrectColor));
-                result_Q3.setText(incorrect_Q3);
-                result_Q3.setVisibility(View.VISIBLE);
+                q3Result.setBackgroundColor(getResources().getColor(R.color.incorrectColor));
+                q3Result.setText(incorrect_Q3);
+                q3Result.setVisibility(View.VISIBLE);
                 break;
             case "Q4":
                 String incorrect_Q4 = getResources().getString(R.string.result_incorrect_text);
 
-                result_Q4.setBackgroundColor(getResources().getColor(R.color.incorrectColor));
-                result_Q4.setText(incorrect_Q4);
-                result_Q4.setVisibility(View.VISIBLE);
+                q4Result.setBackgroundColor(getResources().getColor(R.color.incorrectColor));
+                q4Result.setText(incorrect_Q4);
+                q4Result.setVisibility(View.VISIBLE);
                 break;
             case "Q5":
                 String incorrect_Q5 = getResources().getString(R.string.result_incorrect_text);
@@ -452,60 +483,60 @@ public class MainActivity extends AppCompatActivity {
                 incorrect_Q5 = incorrect_Q5 + "\n" + getResources().getString(R.string.q5_textbox2_hint) +
                         " " + getResources().getString(R.string.question05_answer_flight);
 
-                result_Q5.setBackgroundColor(getResources().getColor(R.color.incorrectColor));
-                result_Q5.setText(incorrect_Q5);
-                result_Q5.setVisibility(View.VISIBLE);
+                q5Result.setBackgroundColor(getResources().getColor(R.color.incorrectColor));
+                q5Result.setText(incorrect_Q5);
+                q5Result.setVisibility(View.VISIBLE);
                 break;
             case "Q6":
                 String incorrect_Q6 = getResources().getString(R.string.result_incorrect_text);
 
-                result_Q6.setBackgroundColor(getResources().getColor(R.color.incorrectColor));
-                result_Q6.setText(incorrect_Q6);
-                result_Q6.setVisibility(View.VISIBLE);
+                q6Result.setBackgroundColor(getResources().getColor(R.color.incorrectColor));
+                q6Result.setText(incorrect_Q6);
+                q6Result.setVisibility(View.VISIBLE);
                 break;
             case "Q7":
                 String incorrect_Q7 = getResources().getString(R.string.result_incorrect_text) +
                         "\n" + getResources().getString(R.string.correct_answer_text) +
                         " " + getResources().getString(R.string.question07_answer);
 
-                result_Q7.setBackgroundColor(getResources().getColor(R.color.incorrectColor));
-                result_Q7.setText(incorrect_Q7);
-                result_Q7.setVisibility(View.VISIBLE);
+                q7Result.setBackgroundColor(getResources().getColor(R.color.incorrectColor));
+                q7Result.setText(incorrect_Q7);
+                q7Result.setVisibility(View.VISIBLE);
                 break;
             case "Q8":
                 String incorrect_Q8 = getResources().getString(R.string.result_incorrect_text);
 
-                result_Q8.setBackgroundColor(getResources().getColor(R.color.incorrectColor));
-                result_Q8.setText(incorrect_Q8);
-                result_Q8.setVisibility(View.VISIBLE);
+                q8Result.setBackgroundColor(getResources().getColor(R.color.incorrectColor));
+                q8Result.setText(incorrect_Q8);
+                q8Result.setVisibility(View.VISIBLE);
                 break;
             case "Q9":
                 String incorrect_Q9 = getResources().getString(R.string.result_incorrect_text);
 
-                result_Q9.setBackgroundColor(getResources().getColor(R.color.incorrectColor));
-                result_Q9.setText(incorrect_Q9);
-                result_Q9.setVisibility(View.VISIBLE);
+                q9Result.setBackgroundColor(getResources().getColor(R.color.incorrectColor));
+                q9Result.setText(incorrect_Q9);
+                q9Result.setVisibility(View.VISIBLE);
                 break;
             case "Q10":
                 String incorrect_Q10 = getResources().getString(R.string.result_incorrect_text);
 
-                result_Q10.setBackgroundColor(getResources().getColor(R.color.incorrectColor));
-                result_Q10.setText(incorrect_Q10);
-                result_Q10.setVisibility(View.VISIBLE);
+                q10Result.setBackgroundColor(getResources().getColor(R.color.incorrectColor));
+                q10Result.setText(incorrect_Q10);
+                q10Result.setVisibility(View.VISIBLE);
                 break;
             case "Q11":
                 String incorrect_Q11 = getResources().getString(R.string.result_incorrect_text);
 
-                result_Q11.setBackgroundColor(getResources().getColor(R.color.incorrectColor));
-                result_Q11.setText(incorrect_Q11);
-                result_Q11.setVisibility(View.VISIBLE);
+                q11Result.setBackgroundColor(getResources().getColor(R.color.incorrectColor));
+                q11Result.setText(incorrect_Q11);
+                q11Result.setVisibility(View.VISIBLE);
                 break;
             case "Q12":
                 String incorrect_Q12 = getResources().getString(R.string.result_incorrect_text);
 
-                result_Q12.setBackgroundColor(getResources().getColor(R.color.incorrectColor));
-                result_Q12.setText(incorrect_Q12);
-                result_Q12.setVisibility(View.VISIBLE);
+                q12Result.setBackgroundColor(getResources().getColor(R.color.incorrectColor));
+                q12Result.setText(incorrect_Q12);
+                q12Result.setVisibility(View.VISIBLE);
                 break;
         }
     }
@@ -553,126 +584,83 @@ public class MainActivity extends AppCompatActivity {
         resetQuizScores();
 
         //Clear Question 1
-        EditText guess_Q1 = findViewById(R.id.q1_textbox);
-        TextView result_Q1 = findViewById(R.id.q1_result_text);
-
-        guess_Q1.setText("");
-        result_Q1.setVisibility(View.GONE);
+        q1Guess.setText("");
+        q1Result.setVisibility(View.GONE);
 
         //Clear Question 2
-        RadioGroup q2_Answers = findViewById(R.id.q2_radioGroup);
-        TextView result_Q2 = findViewById(R.id.q2_result_text);
-
-        q2_Answers.clearCheck();
-        result_Q2.setVisibility(View.GONE);
+        q2RadioGrp.clearCheck();
+        q2Result.setVisibility(View.GONE);
 
         //Clear Question 3 checkboxes
-        CheckBox q3_chkbox1 = findViewById(R.id.q3_check_guess1);
-        CheckBox q3_chkbox2 = findViewById(R.id.q3_check_guess2);
-        CheckBox q3_chkbox3 = findViewById(R.id.q3_check_guess3);
-        CheckBox q3_chkbox4 = findViewById(R.id.q3_check_guess4);
-        TextView result_Q3 = findViewById(R.id.q3_result_text);
-
-        if (q3_chkbox1.isChecked()) {
-            q3_chkbox1.toggle();
+        if (q3CB1.isChecked()) {
+            q3CB1.toggle();
         }
 
-        if (q3_chkbox2.isChecked()) {
-            q3_chkbox2.toggle();
+        if (q3CB2.isChecked()) {
+            q3CB2.toggle();
         }
 
-        if (q3_chkbox3.isChecked()) {
-            q3_chkbox3.toggle();
+        if (q3CB3.isChecked()) {
+            q3CB3.toggle();
         }
 
-        if (q3_chkbox4.isChecked()) {
-            q3_chkbox4.toggle();
+        if (q3CB4.isChecked()) {
+            q3CB4.toggle();
         }
 
-        result_Q3.setVisibility(View.GONE);
+        q3Result.setVisibility(View.GONE);
 
         //Clear Question 4
-        RadioGroup q4_Answers = findViewById(R.id.q4_radioGroup);
-        TextView result_Q4 = findViewById(R.id.q4_result_text);
-
-        q4_Answers.clearCheck();
-        result_Q4.setVisibility(View.GONE);
+        q4RadioGrp.clearCheck();
+        q4Result.setVisibility(View.GONE);
 
         //Clear Question 5
-        EditText gateGuess_Q5 = findViewById(R.id.q5_textbox1);
-        TextView result_Q5 = findViewById(R.id.q5_result_text);
-        EditText flightGuess_Q5 = findViewById(R.id.q5_textbox2);
-
-        gateGuess_Q5.setText("");
-        flightGuess_Q5.setText("");
-        result_Q5.setVisibility(View.GONE);
+        q5GateGuess.setText("");
+        q5FltGuess.setText("");
+        q5Result.setVisibility(View.GONE);
 
         //Clear Question 6
-        RadioGroup q6_Answers = findViewById(R.id.q6_radioGroup);
-        TextView result_Q6 = findViewById(R.id.q6_result_text);
-
-        q6_Answers.clearCheck();
-        result_Q6.setVisibility(View.GONE);
+        q6RadioGrp.clearCheck();
+        q6Result.setVisibility(View.GONE);
 
         //Clear Question 7
-        EditText guess_Q7 = findViewById(R.id.q7_textbox);
-        TextView result_Q7 = findViewById(R.id.q7_result_text);
-
-        guess_Q7.setText("");
-        result_Q7.setVisibility(View.GONE);
+        q7Guess.setText("");
+        q7Result.setVisibility(View.GONE);
 
         //Clear Question 8
-        RadioGroup q8_Answers = findViewById(R.id.q8_radioGroup);
-        TextView result_Q8 = findViewById(R.id.q8_result_text);
-
-        q8_Answers.clearCheck();
-        result_Q8.setVisibility(View.GONE);
+        q8RadioGrp.clearCheck();
+        q8Result.setVisibility(View.GONE);
 
         //Clear Question 9
-        RadioGroup q9_Answers = findViewById(R.id.q9_radioGroup);
-        TextView result_Q9 = findViewById(R.id.q9_result_text);
-
-        q9_Answers.clearCheck();
-        result_Q9.setVisibility(View.GONE);
+        q9RadioGrp.clearCheck();
+        q9Result.setVisibility(View.GONE);
 
         //Clear Question 10
-        RadioGroup q10_Answers = findViewById(R.id.q10_radioGroup);
-        TextView result_Q10 = findViewById(R.id.q10_result_text);
-
-        q10_Answers.clearCheck();
-        result_Q10.setVisibility(View.GONE);
+        q10RadioGrp.clearCheck();
+        q10Result.setVisibility(View.GONE);
 
         //Clear Question 11 checkboxes
-        CheckBox q11_chkbox1 = findViewById(R.id.q11_check_guess1);
-        CheckBox q11_chkbox2 = findViewById(R.id.q11_check_guess2);
-        CheckBox q11_chkbox3 = findViewById(R.id.q11_check_guess3);
-        CheckBox q11_chkbox4 = findViewById(R.id.q11_check_guess4);
-        TextView result_Q11 = findViewById(R.id.q11_result_text);
-
-        if (q11_chkbox1.isChecked()) {
-            q11_chkbox1.toggle();
+        if (q11CB1.isChecked()) {
+            q11CB1.toggle();
         }
 
-        if (q11_chkbox2.isChecked()) {
-            q11_chkbox2.toggle();
+        if (q11CB2.isChecked()) {
+            q11CB2.toggle();
         }
 
-        if (q11_chkbox3.isChecked()) {
-            q11_chkbox3.toggle();
+        if (q11CB3.isChecked()) {
+            q11CB3.toggle();
         }
 
-        if (q11_chkbox4.isChecked()) {
-            q11_chkbox4.toggle();
+        if (q11CB4.isChecked()) {
+            q11CB4.toggle();
         }
 
-        result_Q11.setVisibility(View.GONE);
+        q11Result.setVisibility(View.GONE);
 
         //Clear Question 12
-        RadioGroup q12_Answers = findViewById(R.id.q12_radioGroup);
-        TextView result_Q12 = findViewById(R.id.q12_result_text);
-
-        q12_Answers.clearCheck();
-        result_Q12.setVisibility(View.GONE);
+        q12RadioGrp.clearCheck();
+        q12Result.setVisibility(View.GONE);
 
     }
 
@@ -681,35 +669,20 @@ public class MainActivity extends AppCompatActivity {
      * answered incorrectly. Called when Submit or Reset button is clicked.
      */
     public void removeHighlighting() {
-        RadioButton q2_correct_answer = findViewById(R.id.q2_radio_answer);
-        CheckBox q3_chkbox1 = findViewById(R.id.q3_check_guess1);
-        CheckBox q3_chkbox2 = findViewById(R.id.q3_check_guess2);
-        CheckBox q3_chkbox3 = findViewById(R.id.q3_check_guess3);
-        CheckBox q3_chkbox4 = findViewById(R.id.q3_check_guess4);
-        RadioButton q4_correct_answer = findViewById(R.id.q4_radio3);
-        RadioButton q6_correct_answer = findViewById(R.id.q6_radio1);
-        RadioButton q8_correct_answer = findViewById(R.id.q8_radio1);
-        RadioButton q9_correct_answer = findViewById(R.id.q9_radio4);
-        RadioButton q10_correct_answer = findViewById(R.id.q10_radio1);
-        CheckBox q11_chkbox2 = findViewById(R.id.q11_check_guess2);
-        CheckBox q11_chkbox3 = findViewById(R.id.q11_check_guess3);
-        CheckBox q11_chkbox4 = findViewById(R.id.q11_check_guess4);
-        RadioButton q12_correct_answer = findViewById(R.id.q12_radio4);
-
-        q2_correct_answer.setBackgroundColor(Color.TRANSPARENT);
-        q3_chkbox1.setBackgroundColor(Color.TRANSPARENT);
-        q3_chkbox2.setBackgroundColor(Color.TRANSPARENT);
-        q3_chkbox3.setBackgroundColor(Color.TRANSPARENT);
-        q3_chkbox4.setBackgroundColor(Color.TRANSPARENT);
-        q4_correct_answer.setBackgroundColor(Color.TRANSPARENT);
-        q6_correct_answer.setBackgroundColor(Color.TRANSPARENT);
-        q8_correct_answer.setBackgroundColor(Color.TRANSPARENT);
-        q9_correct_answer.setBackgroundColor(Color.TRANSPARENT);
-        q10_correct_answer.setBackgroundColor(Color.TRANSPARENT);
-        q11_chkbox2.setBackgroundColor(Color.TRANSPARENT);
-        q11_chkbox3.setBackgroundColor(Color.TRANSPARENT);
-        q11_chkbox4.setBackgroundColor(Color.TRANSPARENT);
-        q12_correct_answer.setBackgroundColor(Color.TRANSPARENT);
+        q2CorrectAnswer.setBackgroundColor(Color.TRANSPARENT);
+        q3CB1.setBackgroundColor(Color.TRANSPARENT);
+        q3CB2.setBackgroundColor(Color.TRANSPARENT);
+        q3CB3.setBackgroundColor(Color.TRANSPARENT);
+        q3CB4.setBackgroundColor(Color.TRANSPARENT);
+        q4CorrectAnswer.setBackgroundColor(Color.TRANSPARENT);
+        q6CorrectAnswer.setBackgroundColor(Color.TRANSPARENT);
+        q8CorrectAnswer.setBackgroundColor(Color.TRANSPARENT);
+        q9CorrectAnswer.setBackgroundColor(Color.TRANSPARENT);
+        q10CorrectAnswer.setBackgroundColor(Color.TRANSPARENT);
+        q11CB2.setBackgroundColor(Color.TRANSPARENT);
+        q11CB3.setBackgroundColor(Color.TRANSPARENT);
+        q11CB4.setBackgroundColor(Color.TRANSPARENT);
+        q12CorrectAnswer.setBackgroundColor(Color.TRANSPARENT);
 
     }
 
@@ -727,6 +700,5 @@ public class MainActivity extends AppCompatActivity {
         q5_sub_score = 0;
         q11_sub_score = 0;
     }
-
 
 }
