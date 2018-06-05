@@ -2,6 +2,13 @@
 <resources>
     <dimen name="rec_corner_radius">0dp</dimen>
     <dimen name="rec_stroke_width">2dp</dimen>
+    <dimen name="viewGroup_layout_height">0dp</dimen>
+    <dimen name="header_weight">1</dimen>
+    <dimen name="main_scroll_weight">1.75</dimen>
+    <dimen name="app_title_text_size">36sp</dimen>
+    <dimen name="about_quiz_text_size">16sp</dimen>
+    <dimen name="reset_minHeight">24dp</dimen>
+    <dimen name="reset_minWidth">64dp</dimen>
     <dimen name="layout_margin_left_right">16dp</dimen>
     <dimen name="layout_margin_top_bottom">8dp</dimen>
     <dimen name="answer_left_indent">108dp</dimen>
@@ -9,4 +16,5 @@
     <dimen name="padding_textbox_left_right">8dp</dimen>
     <dimen name="default_text_size">14sp</dimen>
     <dimen name="result_text_size">20sp</dimen>
+    <dimen name="separator_height">1dp</dimen>
 </resources>

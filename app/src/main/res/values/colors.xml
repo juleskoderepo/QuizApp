@@ -4,8 +4,11 @@
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#1A237E</color>
     <color name="resetButtonColor">#FFFF8D</color>
+    <color name="titleTextColor">#FFFFFF</color>
+    <color name="separatorLineColor">#616161</color>
     <color name="submitButtonColor">#1A237E</color>
-    <color name="highScoreColor">#00E676</color>
     <color name="correctColor">#00E676</color>
     <color name="incorrectColor">#F44336</color>
+    <color name="submitButtonTextColor">#FFFFFF</color>
+    <color name="transparent">@android:color/transparent</color>
 </resources>

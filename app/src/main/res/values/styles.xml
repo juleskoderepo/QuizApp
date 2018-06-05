@@ -8,4 +8,65 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <!-- Style for question labels and text -->
+    <style name="QuestionStyle">
+        <item name="android:layout_marginBottom">@dimen/layout_margin_top_bottom</item>
+        <item name="android:layout_marginLeft">@dimen/layout_margin_left_right</item>
+        <item name="android:layout_marginTop">@dimen/layout_margin_top_bottom</item>
+        <item name="android:textSize">@dimen/default_text_size</item>
+    </style>
+
+    <!-- Text box style for EditText views -->
+    <style name="TextBoxStyle">
+        <item name="android:layout_marginBottom">@dimen/layout_margin_top_bottom</item>
+        <item name="android:layout_marginLeft">@dimen/answer_left_indent</item>
+        <item name="android:layout_marginRight">@dimen/layout_margin_left_right</item>
+        <item name="android:background">@drawable/textbox_transparent</item>
+        <item name="android:imeOptions">actionDone</item>
+        <item name="android:paddingLeft">@dimen/padding_textbox_left_right</item>
+        <item name="android:paddingRight">@dimen/padding_textbox_left_right</item>
+    </style>
+
+    <!-- Style for results messages displayed once quiz is scored -->
+    <style name="ResultStyle">
+        <item name="android:layout_marginBottom">@dimen/layout_margin_top_bottom</item>
+        <item name="android:layout_marginTop">@dimen/layout_margin_top_bottom</item>
+        <item name="android:layout_gravity">center_horizontal</item>
+        <item name="android:gravity">center_horizontal</item>
+        <item name="android:paddingLeft">@dimen/padding_textbox_left_right</item>
+        <item name="android:paddingRight">@dimen/padding_textbox_left_right</item>
+        <item name="android:textSize">@dimen/result_text_size</item>
+        <item name="android:textStyle">bold|italic</item>
+        <item name="android:visibility">gone</item>
+    </style>
+
+    <!-- Style for horizontal line separating each question -->
+    <style name="SeparatorLine">
+        <item name="android:layout_marginBottom">@dimen/layout_margin_top_bottom</item>
+        <item name="android:layout_marginLeft">@dimen/layout_margin_left_right</item>
+        <item name="android:layout_marginRight">@dimen/layout_margin_left_right</item>
+        <item name="android:layout_marginTop">@dimen/layout_margin_top_bottom</item>
+        <item name="android:background">@color/separatorLineColor</item>
+    </style>
+
+    <!-- Styles for questions using radio buttons -->
+    <style name="RadioGroupStyle">
+        <item name="android:layout_marginBottom">@dimen/layout_margin_top_bottom</item>
+        <item name="android:layout_marginLeft">@dimen/answer_left_indent</item>
+        <item name="android:layout_marginRight">@dimen/layout_margin_left_right</item>
+        <item name="android:orientation">vertical</item>
+    </style>
+
+    <style name="RadioButtonStyle">
+        <item name="android:paddingLeft">@dimen/padding_checkbox_radio</item>
+        <item name="android:paddingRight">@dimen/padding_checkbox_radio</item>
+    </style>
+
+    <!-- Style for questions using checkboxes -->
+    <style name="CheckBoxStyle">
+        <item name="android:layout_marginLeft">@dimen/answer_left_indent</item>
+        <item name="android:layout_marginRight">@dimen/layout_margin_left_right</item>
+        <item name="android:paddingLeft">@dimen/padding_checkbox_radio</item>
+        <item name="android:paddingRight">@dimen/padding_checkbox_radio</item>
+    </style>
 </resources>
