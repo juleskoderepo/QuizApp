@@ -74,8 +74,33 @@ public class MainActivity extends AppCompatActivity {
     int q8ResultVisibility;
 
 
-    public static final String KEY_savedQ5Text = "savedQ5Guess";
     public static final String KEY_savedScore = "savedQuizScore";
+    public static final String KEY_scoreCalculated = "savedScoreCalculated";
+    public static final String KEY_q1ResultText = "savedQ1Result";
+    public static final String KEY_q1ResultTextColor = "savedQ1ResultTextColor";
+    public static final String KEY_q1ResultVisibility = "savedQ1ResultVisibility";
+    public static final String KEY_q2ResultText = "savedQ2Result";
+    public static final String KEY_q2ResultTextColor = "savedQ2ResultTextColor";
+    public static final String KEY_q2ResultVisibility = "savedQ2ResultVisibility";
+    public static final String KEY_q3ResultText = "savedQ3Result";
+    public static final String KEY_q3ResultTextColor = "savedQ3ResultTextColor";
+    public static final String KEY_q3ResultVisibility = "savedQ3ResultVisibility";
+    public static final String KEY_q4ResultText = "savedQ4Result";
+    public static final String KEY_q4ResultTextColor = "savedQ4ResultTextColor";
+    public static final String KEY_q4ResultVisibility = "savedQ4ResultVisibility";
+    public static final String KEY_savedQ5Text = "savedQ5Guess";
+    public static final String KEY_q5ResultText = "savedQ5Result";
+    public static final String KEY_q5ResultTextColor = "savedQ5ResultTextColor";
+    public static final String KEY_q5ResultVisibility = "savedQ5ResultVisibility";
+    public static final String KEY_q6ResultText = "savedQ6Result";
+    public static final String KEY_q6ResultTextColor = "savedQ6esultTextColor";
+    public static final String KEY_q6ResultVisibility = "savedQ6ResultVisibility";
+    public static final String KEY_q7ResultText = "savedQ7Result";
+    public static final String KEY_q7ResultTextColor = "savedQ7ResultTextColor";
+    public static final String KEY_q7ResultVisibility = "savedQ7ResultVisibility";
+    public static final String KEY_q8ResultText = "savedQ8Result";
+    public static final String KEY_q8ResultTextColor = "savedQ8ResultTextColor";
+    public static final String KEY_q8ResultVisibility = "savedQ8ResultVisibility";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -151,37 +176,37 @@ public class MainActivity extends AppCompatActivity {
         q8ResultVisibility = q8Result.getVisibility();
 
         //add saved values to savedInstanceState bundle
-        savedInstanceState.putCharSequence("KEY_q1ResultText", q1ResultText);
-        savedInstanceState.putInt("KEY_q1ResultTextColor", q1ResultTextColor);
-        savedInstanceState.putInt("KEY_q1ResultVisibility", q1ResultVisibility);
-        savedInstanceState.putCharSequence("KEY_q2ResultText", q2ResultText);
-        savedInstanceState.putInt("KEY_q2ResultTextColor", q2ResultTextColor);
-        savedInstanceState.putInt("KEY_q2ResultVisibility", q2ResultVisibility);
-        savedInstanceState.putCharSequence("KEY_q3ResultText", q3ResultText);
-        savedInstanceState.putInt("KEY_q3ResultTextColor", q3ResultTextColor);
-        savedInstanceState.putInt("KEY_q3ResultVisibility", q3ResultVisibility);
-        savedInstanceState.putCharSequence("KEY_q4ResultText", q4ResultText);
-        savedInstanceState.putInt("KEY_q4ResultTextColor", q4ResultTextColor);
-        savedInstanceState.putInt("KEY_q4ResultVisibility", q4ResultVisibility);
+        savedInstanceState.putCharSequence(KEY_q1ResultText, q1ResultText);
+        savedInstanceState.putInt(KEY_q1ResultTextColor, q1ResultTextColor);
+        savedInstanceState.putInt(KEY_q1ResultVisibility, q1ResultVisibility);
+        savedInstanceState.putCharSequence(KEY_q2ResultText, q2ResultText);
+        savedInstanceState.putInt(KEY_q2ResultTextColor, q2ResultTextColor);
+        savedInstanceState.putInt(KEY_q2ResultVisibility, q2ResultVisibility);
+        savedInstanceState.putCharSequence(KEY_q3ResultText, q3ResultText);
+        savedInstanceState.putInt(KEY_q3ResultTextColor, q3ResultTextColor);
+        savedInstanceState.putInt(KEY_q3ResultVisibility, q3ResultVisibility);
+        savedInstanceState.putCharSequence(KEY_q4ResultText, q4ResultText);
+        savedInstanceState.putInt(KEY_q4ResultTextColor, q4ResultTextColor);
+        savedInstanceState.putInt(KEY_q4ResultVisibility, q4ResultVisibility);
         savedInstanceState.putCharSequence(KEY_savedQ5Text, q5Text);
-        savedInstanceState.putCharSequence("KEY_q5ResultText", q5ResultText);
-        savedInstanceState.putInt("KEY_q5ResultTextColor", q5ResultTextColor);
-        savedInstanceState.putInt("KEY_q5ResultVisibility", q5ResultVisibility);
-        savedInstanceState.putCharSequence("KEY_q6ResultText", q6ResultText);
-        savedInstanceState.putInt("KEY_q6ResultTextColor", q6ResultTextColor);
-        savedInstanceState.putInt("KEY_q6ResultVisibility", q6ResultVisibility);
-        savedInstanceState.putCharSequence("KEY_q7ResultText", q7ResultText);
-        savedInstanceState.putInt("KEY_q7ResultTextColor", q7ResultTextColor);
-        savedInstanceState.putInt("KEY_q7ResultVisibility", q7ResultVisibility);
-        savedInstanceState.putCharSequence("KEY_q8ResultText", q8ResultText);
-        savedInstanceState.putInt("KEY_q8ResultTextColor", q8ResultTextColor);
-        savedInstanceState.putInt("KEY_q8ResultVisibility", q8ResultVisibility);
+        savedInstanceState.putCharSequence(KEY_q5ResultText, q5ResultText);
+        savedInstanceState.putInt(KEY_q5ResultTextColor, q5ResultTextColor);
+        savedInstanceState.putInt(KEY_q5ResultVisibility, q5ResultVisibility);
+        savedInstanceState.putCharSequence(KEY_q6ResultText, q6ResultText);
+        savedInstanceState.putInt(KEY_q6ResultTextColor, q6ResultTextColor);
+        savedInstanceState.putInt(KEY_q6ResultVisibility, q6ResultVisibility);
+        savedInstanceState.putCharSequence(KEY_q7ResultText, q7ResultText);
+        savedInstanceState.putInt(KEY_q7ResultTextColor, q7ResultTextColor);
+        savedInstanceState.putInt(KEY_q7ResultVisibility, q7ResultVisibility);
+        savedInstanceState.putCharSequence(KEY_q8ResultText, q8ResultText);
+        savedInstanceState.putInt(KEY_q8ResultTextColor, q8ResultTextColor);
+        savedInstanceState.putInt(KEY_q8ResultVisibility, q8ResultVisibility);
 
         //save quiz score
         savedInstanceState.putInt(KEY_savedScore, quiz_score);
 
         //save score calculated flag
-        savedInstanceState.putInt("KEY_scoreCalculated", score_calculated);
+        savedInstanceState.putInt(KEY_scoreCalculated, score_calculated);
 
     }
 
@@ -203,34 +228,34 @@ public class MainActivity extends AppCompatActivity {
 //        q1CorrectAnswer.setBackgroundResource(colorId);
 
         //retrieve saved values
-        q1ResultText = savedInstanceState.getCharSequence("KEY_q1ResultText");
-        q1ResultTextColor = savedInstanceState.getInt("KEY_q1ResultTextColor");
-        q1ResultVisibility = savedInstanceState.getInt("KEY_q1ResultVisibility");
-        q2ResultText = savedInstanceState.getCharSequence("KEY_q2ResultText");
-        q2ResultTextColor = savedInstanceState.getInt("KEY_q2ResultTextColor");
-        q2ResultVisibility = savedInstanceState.getInt("KEY_q2ResultVisibility");
-        q3ResultText = savedInstanceState.getCharSequence("KEY_q3ResultText");
-        q3ResultTextColor = savedInstanceState.getInt("KEY_q3ResultTextColor");
-        q3ResultVisibility = savedInstanceState.getInt("KEY_q3ResultVisibility");
-        q4ResultText = savedInstanceState.getCharSequence("KEY_q4ResultText");
-        q4ResultTextColor = savedInstanceState.getInt("KEY_q4ResultTextColor");
-        q4ResultVisibility = savedInstanceState.getInt("KEY_q4ResultVisibility");
+        q1ResultText = savedInstanceState.getCharSequence(KEY_q1ResultText);
+        q1ResultTextColor = savedInstanceState.getInt(KEY_q1ResultTextColor);
+        q1ResultVisibility = savedInstanceState.getInt(KEY_q1ResultVisibility);
+        q2ResultText = savedInstanceState.getCharSequence(KEY_q2ResultText);
+        q2ResultTextColor = savedInstanceState.getInt(KEY_q2ResultTextColor);
+        q2ResultVisibility = savedInstanceState.getInt(KEY_q2ResultVisibility);
+        q3ResultText = savedInstanceState.getCharSequence(KEY_q3ResultText);
+        q3ResultTextColor = savedInstanceState.getInt(KEY_q3ResultTextColor);
+        q3ResultVisibility = savedInstanceState.getInt(KEY_q3ResultVisibility);
+        q4ResultText = savedInstanceState.getCharSequence(KEY_q4ResultText);
+        q4ResultTextColor = savedInstanceState.getInt(KEY_q4ResultTextColor);
+        q4ResultVisibility = savedInstanceState.getInt(KEY_q4ResultVisibility);
         q5Text = savedInstanceState.getCharSequence(KEY_savedQ5Text);
-        q5ResultText = savedInstanceState.getCharSequence("KEY_q5ResultText");
-        q5ResultTextColor = savedInstanceState.getInt("KEY_q5ResultTextColor");
-        q5ResultVisibility = savedInstanceState.getInt("KEY_q5ResultVisibility");
-        q6ResultText = savedInstanceState.getCharSequence("KEY_q6ResultText");
-        q6ResultTextColor = savedInstanceState.getInt("KEY_q6ResultTextColor");
-        q6ResultVisibility = savedInstanceState.getInt("KEY_q6ResultVisibility");
-        q6ResultText = savedInstanceState.getCharSequence("KEY_q6ResultText");
-        q6ResultTextColor = savedInstanceState.getInt("KEY_q6ResultTextColor");
-        q6ResultVisibility = savedInstanceState.getInt("KEY_q6ResultVisibility");
-        q7ResultText = savedInstanceState.getCharSequence("KEY_q7ResultText");
-        q7ResultTextColor = savedInstanceState.getInt("KEY_q7ResultTextColor");
-        q7ResultVisibility = savedInstanceState.getInt("KEY_q7ResultVisibility");
-        q8ResultText = savedInstanceState.getCharSequence("KEY_q8ResultText");
-        q8ResultTextColor = savedInstanceState.getInt("KEY_q8ResultTextColor");
-        q8ResultVisibility = savedInstanceState.getInt("KEY_q8ResultVisibility");
+        q5ResultText = savedInstanceState.getCharSequence(KEY_q5ResultText);
+        q5ResultTextColor = savedInstanceState.getInt(KEY_q5ResultTextColor);
+        q5ResultVisibility = savedInstanceState.getInt(KEY_q5ResultVisibility);
+        q6ResultText = savedInstanceState.getCharSequence(KEY_q6ResultText);
+        q6ResultTextColor = savedInstanceState.getInt(KEY_q6ResultTextColor);
+        q6ResultVisibility = savedInstanceState.getInt(KEY_q6ResultVisibility);
+        q6ResultText = savedInstanceState.getCharSequence(KEY_q6ResultText);
+        q6ResultTextColor = savedInstanceState.getInt(KEY_q6ResultTextColor);
+        q6ResultVisibility = savedInstanceState.getInt(KEY_q6ResultVisibility);
+        q7ResultText = savedInstanceState.getCharSequence(KEY_q7ResultText);
+        q7ResultTextColor = savedInstanceState.getInt(KEY_q7ResultTextColor);
+        q7ResultVisibility = savedInstanceState.getInt(KEY_q7ResultVisibility);
+        q8ResultText = savedInstanceState.getCharSequence(KEY_q8ResultText);
+        q8ResultTextColor = savedInstanceState.getInt(KEY_q8ResultTextColor);
+        q8ResultVisibility = savedInstanceState.getInt(KEY_q8ResultVisibility);
 
         //restore saved values
         q1Result.setText(q1ResultText);
@@ -266,7 +291,7 @@ public class MainActivity extends AppCompatActivity {
         restore score calculated flag and highlight correct answers
         if condition is met.
 */
-        score_calculated = savedInstanceState.getInt("KEY_scoreCalculated");
+        score_calculated = savedInstanceState.getInt(KEY_scoreCalculated);
         String correct = getString(R.string.result_correct_text);
 
         if (score_calculated == 1) {
