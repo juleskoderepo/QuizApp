@@ -5,6 +5,7 @@ import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.RadioButton;
@@ -19,6 +20,9 @@ public class MainActivity extends AppCompatActivity {
     int quiz_score = 0;
     final int max_score = 8;
     int score_calculated = 0; //flag to indicate the quiz score has been calculated
+
+    Button reset;
+    Button submit;
 
     RadioGroup q1RadioGrp;
     RadioButton q1CorrectAnswer;
@@ -73,7 +77,7 @@ public class MainActivity extends AppCompatActivity {
     int q8ResultTextColor;
     int q8ResultVisibility;
 
-
+    //Define String constants for Bundle keys
     public static final String KEY_savedScore = "savedQuizScore";
     public static final String KEY_scoreCalculated = "savedScoreCalculated";
     public static final String KEY_q1ResultText = "savedQ1Result";
@@ -107,6 +111,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        //Initialize global variables here for improved performance
         q1RadioGrp = findViewById(R.id.q1_radioGroup);
         q1CorrectAnswer = findViewById(R.id.q1_radio3_answer);
         q1Result = findViewById(R.id.q1_result_text);
@@ -134,6 +139,25 @@ public class MainActivity extends AppCompatActivity {
         q8RadioGrp = findViewById(R.id.q8_radioGroup);
         q8CorrectAnswer = findViewById(R.id.q8_radio3_answer);
         q8Result = findViewById(R.id.q8_result_text);
+
+        //Find View for reset button and capture click event
+        reset = findViewById(R.id.reset_button);
+        reset.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                resetQuiz();
+            }
+        });
+
+        //Find View for submit button and capture click event
+        submit = findViewById(R.id.submit_button);
+        submit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                checkAnswers();
+            }
+        });
+
     }
 
 
@@ -310,7 +334,7 @@ public class MainActivity extends AppCompatActivity {
      * this method will tally the number of correct answers to display back to
      * the user and call other methods to display the quiz results.
      */
-    public void checkAnswers(View view) {
+    public void checkAnswers() {
         //re-initialize quiz score and sub-scores
         resetQuizScores();
 
@@ -504,7 +528,7 @@ public class MainActivity extends AppCompatActivity {
      * This method is called when the 'Reset' button is clicked to clear all
      * text entered, answers selected, highlighted answers, and quiz results.
      */
-    public void resetQuiz(View view) {
+    public void resetQuiz() {
         removeHighlighting();
         resetQuizScores();
 

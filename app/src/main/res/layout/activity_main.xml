@@ -22,6 +22,7 @@
             android:src="@drawable/moonstruck640x360" />
 
         <Button
+            android:id="@+id/reset_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
@@ -33,7 +34,6 @@
             android:background="@color/resetButtonColor"
             android:minHeight="@dimen/reset_minHeight"
             android:minWidth="@dimen/reset_minWidth"
-            android:onClick="resetQuiz"
             android:text="@string/reset_button_text" />
 
         <TextView
@@ -537,7 +537,6 @@
                 android:layout_gravity="center_horizontal"
                 android:layout_margin="@dimen/layout_margin_top_bottom"
                 android:background="@color/submitButtonColor"
-                android:onClick="checkAnswers"
                 android:text="@string/submit_button_text"
                 android:textColor="@color/submitButtonTextColor" />
 
